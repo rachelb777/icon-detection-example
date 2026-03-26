@@ -7,32 +7,27 @@ import blurryArtwork from "@/assets/blurry-artwork.jpg";
 const gestures = [
   { label: "Inquiry", svg: (
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M20 8c-2 0-3.5 1.5-3.5 3.5V20" />
-      <path d="M16.5 18c-2-1-4.5-.5-5 2s1.5 4 3 5l4 3c2 1.5 5 1.5 7-1l2-3c1-2 .5-4-1-5" />
-      <path d="M23.5 11.5c0-2-1.5-3.5-3.5-3.5" />
-      <path d="M18 30c0 1 .5 2 1.5 2.5" />
-      <circle cx="20" cy="35" r="1" fill="currentColor" />
+      <circle cx="20" cy="14" r="6" />
+      <path d="M17 14c0-1.7 1.3-3 3-3" />
+      <path d="M20 20v4" />
+      <circle cx="20" cy="28" r="1.2" fill="currentColor" stroke="none" />
     </svg>
   )},
   { label: "Collection", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M26 12c2 2 3 5 3 8s-1 6-3 8" />
-      <path d="M26 12c-2-2-5-4-8-4s-6 1-8 4c-2 2-3 5-3 8s1 6 3 8c2 2 5 4 8 4s6-2 8-4" />
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <path d="M28 14c-2-3-5-5-8-5s-6 2-8 5c-2 3-3 6-3 9s1 6 3 9c2 3 5 5 8 5" />
     </svg>
   )},
   { label: "Wayfinding", svg: (
     <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M12 28V16c0-1.5 1-3 3-3h0" />
-      <path d="M12 20h14c2 0 3-1 3-3" />
-      <path d="M26 13l4 4-4 4" />
-      <path d="M9 28h6" />
+      <path d="M20 8v24" />
+      <path d="M20 8l-4 6h8l-4-6z" fill="currentColor" stroke="none" />
+      <circle cx="20" cy="36" r="1.5" fill="currentColor" stroke="none" />
     </svg>
   )},
   { label: "Live", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M10 30V10" />
-      <path d="M10 10h12" />
-      <path d="M10 30h6" />
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <path d="M14 10l6 12 6-12" />
     </svg>
   )},
 ];
