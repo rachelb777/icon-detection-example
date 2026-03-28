@@ -5,31 +5,75 @@ import { Camera } from "lucide-react";
 import blurryArtwork from "@/assets/blurry-artwork.jpg";
 
 const gestures = [
-  { label: "Inquiry", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <circle cx="20" cy="14" r="6" />
-      <path d="M17 14c0-1.7 1.3-3 3-3" />
-      <path d="M20 20v4" />
-      <circle cx="20" cy="28" r="1.2" fill="currentColor" stroke="none" />
-    </svg>
-  )},
-  { label: "Collection", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M28 14c-2-3-5-5-8-5s-6 2-8 5c-2 3-3 6-3 9s1 6 3 9c2 3 5 5 8 5" />
-    </svg>
-  )},
-  { label: "Wayfinding", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M20 8v24" />
-      <path d="M20 8l-4 6h8l-4-6z" fill="currentColor" stroke="none" />
-      <circle cx="20" cy="36" r="1.5" fill="currentColor" stroke="none" />
-    </svg>
-  )},
-  { label: "Live", svg: (
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-      <path d="M14 10l6 12 6-12" />
-    </svg>
-  )},
+  {
+    label: "Info",
+    svg: (
+      <svg
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-7 h-7"
+      >
+        <circle cx="20" cy="14" r="6" />
+        <path d="M17 14c0-1.7 1.3-3 3-3" />
+        <path d="M20 20v4" />
+        <circle cx="20" cy="28" r="1.2" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "Collection",
+    svg: (
+      <svg
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-7 h-7"
+      >
+        <path d="M28 14c-2-3-5-5-8-5s-6 2-8 5c-2 3-3 6-3 9s1 6 3 9c2 3 5 5 8 5" />
+      </svg>
+    ),
+  },
+  {
+    label: "Directions",
+    svg: (
+      <svg
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-7 h-7"
+      >
+        <path d="M20 8v24" />
+        <path d="M20 8l-4 6h8l-4-6z" fill="currentColor" stroke="none" />
+        <circle cx="20" cy="36" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "Video",
+    svg: (
+      <svg
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-7 h-7"
+      >
+        <path d="M14 10l6 12 6-12" />
+      </svg>
+    ),
+  },
 ];
 
 const Scanner = () => {
@@ -63,11 +107,7 @@ const Scanner = () => {
       {/* Viewfinder */}
       <div className="relative flex-1 flex items-center justify-center bg-black m-3 rounded-2xl overflow-hidden">
         {/* Blurry artwork background */}
-        <img
-          src={blurryArtwork}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-40 blur-sm"
-        />
+        <img src={blurryArtwork} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40 blur-sm" />
 
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
