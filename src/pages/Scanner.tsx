@@ -172,7 +172,7 @@ const Scanner = () => {
         )}
 
         {/* Bottom instruction */}
-        <div className="absolute bottom-4 left-0 right-0 text-center text-foreground text-sm px-4 z-20 font-medium">
+        <div className="mt-6 absolute bottom-4 left-0 right-0 text-center text-foreground text-sm px-4 z-20 font-medium">
           Aim at artwork → make a hand gesture → press Capture
           <br />
           <span className="text-sm text-white/90 italic mt-1 block">
