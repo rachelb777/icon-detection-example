@@ -7,19 +7,19 @@ import blurryArtwork from "@/assets/blurry-artwork.jpg";
 const gestures = [
   {
     label: "Save to Vault",
-    icon: <img src="/assets/victory-hand.svg" alt="Save to Vault" className="w-10 h-10 object-contain" />,
+    icon: <img src="/assets/victory-hand.svg" alt="Save to Vault" className="w-12 h-12 object-contain" />,
   },
   {
     label: "Insights",
-    icon: <img src="/assets/raised-hand.svg" alt="Insights" className="w-10 h-10 object-contain" />,
+    icon: <img src="/assets/raised-hand.svg" alt="Insights" className="w-12 h-12 object-contain" />,
   },
   {
     label: "Artist Portfolio",
-    icon: <img src="/assets/palm-up-hand.svg" alt="Artist Portfolio" className="w-10 h-10 object-contain" />,
+    icon: <img src="/assets/palm-up-hand.svg" alt="Artist Portfolio" className="w-12 h-12 object-contain" />,
   },
   {
     label: "Genre Discovery",
-    icon: <img src="/assets/hand-point-left.svg" alt="Genre Discovery" className="w-10 h-10 object-contain" />,
+    icon: <img src="/assets/hand-point-left.svg" alt="Genre Discovery" className="w-12 h-12 object-contain" />,
   },
 ];
 
@@ -86,11 +86,11 @@ const Scanner = () => {
 
         {/* Gesture Legend */}
         {!captured && (
-          <div className="absolute bottom-14 left-0 right-0 flex justify-center gap-6 z-20">
+          <div className="absolute bottom-14 left-0 right-0 flex justify-center gap-6 z-20 drop-shadow-md">
             {gestures.map((g) => (
-              <div key={g.label} className="flex flex-col items-center gap-1">
-                <div className="text-primary/70">{g.icon}</div>
-                <span className="text-[9px] text-muted-foreground tracking-wide uppercase">{g.label}</span>
+              <div key={g.label} className="flex flex-col items-center gap-1.5">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 shadow-[0_0_8px_rgba(255,255,255,0.15)]">{g.icon}</div>
+                <span className="text-[10px] text-white font-bold tracking-wide uppercase">{g.label}</span>
               </div>
             ))}
           </div>
