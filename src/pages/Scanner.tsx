@@ -6,73 +6,20 @@ import blurryArtwork from "@/assets/blurry-artwork.jpg";
 
 const gestures = [
   {
-    label: "Info",
-    svg: (
-      <svg
-        viewBox="0 0 40 40"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-7 h-7"
-      >
-        <circle cx="20" cy="14" r="6" />
-        <path d="M17 14c0-1.7 1.3-3 3-3" />
-        <path d="M20 20v4" />
-        <circle cx="20" cy="28" r="1.2" fill="currentColor" stroke="none" />
-      </svg>
-    ),
+    label: "Save to Vault",
+    icon: <img src="/assets/victory-hand.svg" alt="Save to Vault" className="w-10 h-10 object-contain" />,
   },
   {
-    label: "Collection",
-    svg: (
-      <svg
-        viewBox="0 0 40 40"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-7 h-7"
-      >
-        <path d="M28 14c-2-3-5-5-8-5s-6 2-8 5c-2 3-3 6-3 9s1 6 3 9c2 3 5 5 8 5" />
-      </svg>
-    ),
+    label: "Insights",
+    icon: <img src="/assets/raised-hand.svg" alt="Insights" className="w-10 h-10 object-contain" />,
   },
   {
-    label: "Directions",
-    svg: (
-      <svg
-        viewBox="0 0 40 40"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-7 h-7"
-      >
-        <path d="M20 8v24" />
-        <path d="M20 8l-4 6h8l-4-6z" fill="currentColor" stroke="none" />
-        <circle cx="20" cy="36" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
+    label: "Artist Portfolio",
+    icon: <img src="/assets/palm-up-hand.svg" alt="Artist Portfolio" className="w-10 h-10 object-contain" />,
   },
   {
-    label: "Video",
-    svg: (
-      <svg
-        viewBox="0 0 40 40"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-7 h-7"
-      >
-        <path d="M14 10l6 12 6-12" />
-      </svg>
-    ),
+    label: "Genre Discovery",
+    icon: <img src="/assets/hand-point-left.svg" alt="Genre Discovery" className="w-10 h-10 object-contain" />,
   },
 ];
 
