@@ -25,7 +25,13 @@ const Collection = () => {
         </div>
         <h1 className="font-sans text-2xl font-semibold text-gold-gradient">My Vault</h1>
         <p className="text-sm text-muted-foreground max-w-xs mx-auto leading-relaxed">
-          Your personal archive of saved artworks, artists, and genres.
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              The <strong>Vault</strong> is your personal archive, accessed by the <strong>"V"</strong> hand sign. Visit
+              your saved art in <strong>Gallery</strong>, explore the <strong>Artist Portfolio</strong> to see more of
+              your artists' works, or discover similar styles in <strong>Genre Discovery</strong>.
+            </p>
+          </p>
         </p>
       </div>
 
@@ -54,9 +60,12 @@ const Collection = () => {
               </div>
               <h2 className="text-lg font-semibold text-foreground">{label}</h2>
               <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-                {value === "gallery" && "Your saved artworks will appear here. Scan and save pieces to build your personal gallery."}
-                {value === "artist" && "Explore more works by artists you've saved. Your favorite creators will be collected here."}
-                {value === "genre" && "Discover styles and movements related to your saved art. New genres await your curiosity."}
+                {value === "gallery" &&
+                  "Your saved artworks will appear here. Scan and save pieces to build your personal gallery."}
+                {value === "artist" &&
+                  "Explore more works by artists you've saved. Your favorite creators will be collected here."}
+                {value === "genre" &&
+                  "Discover styles and movements related to your saved art. New genres await your curiosity."}
               </p>
             </div>
           </TabsContent>
