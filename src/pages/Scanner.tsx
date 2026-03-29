@@ -89,7 +89,7 @@ const Scanner = () => {
           <div className="absolute bottom-14 left-0 right-0 flex justify-center gap-6 z-20">
             {gestures.map((g) => (
               <div key={g.label} className="flex flex-col items-center gap-1">
-                <div className="text-primary/70">{g.svg}</div>
+                <div className="text-primary/70">{g.icon}</div>
                 <span className="text-[9px] text-muted-foreground tracking-wide uppercase">{g.label}</span>
               </div>
             ))}
@@ -121,10 +121,6 @@ const Scanner = () => {
         {/* Bottom instruction */}
         <div className="absolute bottom-2 left-0 right-0 text-center text-foreground text-sm px-4 z-20 font-medium">
           Aim at artwork → make a hand gesture → press Capture
-          <br />
-          <span className="text-sm text-white/90 italic mt-1 block">
-            Your Info and Audio scans will open in Insights.
-          </span>
         </div>
       </div>
 
