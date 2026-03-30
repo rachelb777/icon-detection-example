@@ -146,16 +146,18 @@ const Inquiry = () => {
             >
               Story
             </button>
-            <button
-              onClick={() => setMode("audio")}
-              className={`px-5 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                mode === "audio"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Audio
-            </button>
+            {artworkAudio && (
+              <button
+                onClick={() => setMode("audio")}
+                className={`px-5 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  mode === "audio"
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Audio
+              </button>
+            )}
           </div>
         </div>
 
