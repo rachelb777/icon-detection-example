@@ -9,17 +9,23 @@ const sections = [
   { value: "genre", label: "Genre Discovery", icon: Sparkles },
 ] as const;
 
+const sectionBlurbs: Record<string, string> = {
+  artist: "The palm-up gesture reveals more works by the artist you are currently viewing.",
+};
+
 const placeholderImages: Record<string, { src: string; caption: string }[]> = {
   gallery: [
     { src: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=300&h=300&fit=crop", caption: "Starry Night Study" },
     { src: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=300&fit=crop", caption: "Abstract Form III" },
     { src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=300&h=300&fit=crop", caption: "Renaissance Portrait" },
     { src: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=300&h=300&fit=crop", caption: "Impressionist Garden" },
+    { src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=300&h=300&fit=crop", caption: "Picasso — Cubist Era" },
   ],
   artist: [
-    { src: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop", caption: "Dalí — Persistence" },
-    { src: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=300&h=300&fit=crop", caption: "Monet — Water Lilies" },
-    { src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=300&h=300&fit=crop", caption: "Picasso — Cubist Era" },
+    { src: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop", caption: "Dalí — Persistence of Memory" },
+    { src: "https://upload.wikimedia.org/wikipedia/en/9/9f/Dali_-_Raphaelesque_Head_Exploding.jpg", caption: "Raphaelesque Head Exploding" },
+    { src: "https://upload.wikimedia.org/wikipedia/en/b/ba/Galatea_of_the_Spheres.jpg", caption: "Galatea of the Spheres" },
+    { src: "https://upload.wikimedia.org/wikipedia/en/1/11/The_Meditative_Rose.jpg", caption: "The Meditative Rose" },
   ],
   genre: [
     { src: "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=300&h=300&fit=crop", caption: "Surrealism" },
@@ -70,7 +76,11 @@ const Collection = () => {
         {sections.map(({ value, label }) => (
           <TabsContent key={value} value={value} className="mt-5">
             <div className="glass-surface rounded-2xl p-5 min-h-[320px] flex flex-col">
-              <h2 className="text-lg font-semibold text-foreground mb-4">{label}</h2>
+              <h2 className="text-lg font-semibold text-foreground mb-1">{label}</h2>
+              {sectionBlurbs[value] && (
+                <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{sectionBlurbs[value]}</p>
+              )}
+              {!sectionBlurbs[value] && <div className="mb-3" />}
               <ScrollArea className="flex-1">
                 <div className="grid grid-cols-2 gap-3">
                   {placeholderImages[value].map((item, i) => (
