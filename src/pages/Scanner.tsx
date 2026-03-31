@@ -6,10 +6,10 @@ import { Camera, VideoOff } from "lucide-react";
 const MODEL_URL = "https://teachablemachine.withgoogle.com/models/QvKC9WfFf/";
 
 const CLASS_TO_ARTWORK: Record<string, string> = {
-  "peace-hand": "dali-atomicus",
-  hand: "rivera-mural",
-  "hand-point-left": "klimt-death-life",
-  "palm-up-hand": "hokusai-wave",
+  "Class 1": "dali",
+  "Class 3": "rivera",
+  "Class 4": "klimt",
+  "Class 5": "wave",
 };
 
 // Dynamically load the TM + TF scripts
