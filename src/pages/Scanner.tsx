@@ -66,7 +66,7 @@ const Scanner = () => {
             {recognizing ? (
               <div className="text-center space-y-3 animate-fade-in">
                 <div className="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-                <p className="text-foreground/80 text-sm">Recognizing gesture…</p>
+                <p className="text-foreground/80 text-sm">Scanning artwork icon…</p>
               </div>
             ) : matched ? (
               <div className="text-center space-y-3 animate-fade-in">
