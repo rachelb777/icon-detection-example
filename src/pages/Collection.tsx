@@ -37,6 +37,18 @@ const artworks: ArtworkItem[] = [
       url: "https://commons.wikimedia.org/wiki/File:Man_Controller_of_the_Universe.jpg",
     },
   },
+  {
+    src: klimtDeathLife,
+    title: "Death and Life",
+    artist: "Gustav Klimt",
+    year: "1910–1915",
+    description:
+      "The painting contrasts Death and Life. On the left, a dark-robed skeletal figure gazes at the living. On the right, groups of humans—from babies to the elderly—interact in colorful, ornamental surroundings, representing all stages of life. Klimt originally used a gold background, later changing it to gray to highlight this contrast. The work combines his decorative, mosaic-like style with a quiet tension between mortality and vitality.",
+    attribution: {
+      label: "Wikimedia Commons — Public Domain",
+      url: "https://commons.wikimedia.org/wiki/File:Gustav_Klimt_-_Death_and_Life_(First_Version)_-_1910-11.jpg",
+    },
+  },
 ];
 
 const Collection = () => {
