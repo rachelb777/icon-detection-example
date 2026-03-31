@@ -67,7 +67,7 @@ const Collection = () => {
       </div>
 
       {/* Artwork list */}
-      <div className="w-full max-w-md space-y-6">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
         {artworks.map((item, i) => (
           <div key={i} className="rounded-2xl border border-primary/40 shadow-sm bg-card overflow-hidden">
             <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
