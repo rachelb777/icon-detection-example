@@ -1,5 +1,6 @@
 import { Bookmark } from "lucide-react";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
+import riveraMural from "@/assets/rivera-mural.jpg";
 
 interface ArtworkItem {
   src: string;
@@ -21,6 +22,18 @@ const artworks: ArtworkItem[] = [
     attribution: {
       label: "Wikimedia Commons — PDM 1.0",
       url: "https://commons.wikimedia.org/wiki/File:Salvador_Dali_A_(Dali_Atomicus)_09633u.jpg",
+    },
+  },
+  {
+    src: riveraMural,
+    title: "Man, Controller of the Universe",
+    artist: "Diego Rivera",
+    year: "1934",
+    description:
+      "After his original mural was destroyed at Rockefeller Center, Diego Rivera recreated it in Mexico City. The new version expands on his vision of humanity at the center of a rapidly changing world, surrounded by technology, social conflict, and scientific discovery. The original was removed because it included a portrait of Vladimir Lenin, which Rivera refused to erase. In this version, he doubled down—adding even more political figures, such as Leon Trotsky, and added a scene mocking John D. Rockefeller Jr. who ordered the destruction of his original mural turning it into a powerful statement about power, progress, and control.",
+    attribution: {
+      label: "Palacio de Bellas Artes — Public Domain",
+      url: "https://commons.wikimedia.org/wiki/File:Man_Controller_of_the_Universe.jpg",
     },
   },
 ];
