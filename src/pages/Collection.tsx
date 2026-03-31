@@ -114,11 +114,11 @@ const Collection = () => {
           return (
             <div
               key={item.id}
-              ref={(el) => { cardRefs.current[item.id] = el; }}
-              className={`rounded-2xl border shadow-sm bg-card overflow-hidden transition-all duration-700 ${
-                isHighlighted
-                  ? "border-primary ring-2 ring-primary/40 shadow-[0_0_24px_hsla(var(--gold),0.3)]"
-                  : "border-primary/40"
+              ref={(el) => {
+                cardRefs.current[item.id] = el;
+              }}
+              className={`rounded-2xl border shadow-sm bg-card overflow-hidden transition-all duration-500 ease-out ${
+                isHighlighted ? "border-primary border-4 ring-4 ring-primary/60 scale-105" : "border-primary/20"
               }`}
             >
               <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
