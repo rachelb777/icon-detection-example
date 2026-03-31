@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { Bookmark } from "lucide-react";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
@@ -5,6 +7,7 @@ import klimtDeathLife from "@/assets/klimt-death-life.jpg";
 import hokusaiWave from "@/assets/hokusai-wave.jpg";
 
 interface ArtworkItem {
+  id: string;
   src: string;
   title: string;
   artist: string;
@@ -15,6 +18,7 @@ interface ArtworkItem {
 
 const artworks: ArtworkItem[] = [
   {
+    id: "dali-atomicus",
     src: daliAtomicus,
     title: "Dali Atomicus",
     artist: "Philippe Halsman & Salvador Dalí",
@@ -27,6 +31,7 @@ const artworks: ArtworkItem[] = [
     },
   },
   {
+    id: "rivera-mural",
     src: riveraMural,
     title: "Man, Controller of the Universe",
     artist: "Diego Rivera",
@@ -39,6 +44,7 @@ const artworks: ArtworkItem[] = [
     },
   },
   {
+    id: "klimt-death-life",
     src: klimtDeathLife,
     title: "Death and Life",
     artist: "Gustav Klimt",
@@ -51,6 +57,7 @@ const artworks: ArtworkItem[] = [
     },
   },
   {
+    id: "hokusai-wave",
     src: hokusaiWave,
     title: "The Great Wave off Kanagawa",
     artist: "Katsushika Hokusai",
@@ -65,6 +72,19 @@ const artworks: ArtworkItem[] = [
 ];
 
 const Collection = () => {
+  const location = useLocation();
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const highlightId = (location.state as any)?.highlightArtwork as string | undefined;
+
+  useEffect(() => {
+    if (highlightId && cardRefs.current[highlightId]) {
+      // Small delay so the page renders first
+      setTimeout(() => {
+        cardRefs.current[highlightId]?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
+    }
+  }, [highlightId]);
+
   return (
     <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
       {/* Header */}
@@ -74,35 +94,46 @@ const Collection = () => {
         </div>
         <h1 className="font-sans text-2xl font-semibold text-gold-gradient">Museum Gallery</h1>
         <p className="text-sm text-muted-foreground max-w-xs mx-auto leading-relaxed">
-          Explore each artwork you’ve scanned. See images, read descriptions, and learn about the artists—all in one
+          Explore each artwork you've scanned. See images, read descriptions, and learn about the artists—all in one
           simple, easy-to-use gallery.
         </p>
       </div>
 
       {/* Artwork list */}
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
-        {artworks.map((item, i) => (
-          <div key={i} className="rounded-2xl border border-primary/40 shadow-sm bg-card overflow-hidden">
-            <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
-            <div className="p-5 space-y-2">
-              <h2 className="text-lg font-bold text-foreground">{item.title}</h2>
-              <p className="text-sm text-muted-foreground italic">
-                {item.artist}, {item.year}
-              </p>
-              <p className="text-sm text-foreground/80 leading-relaxed">{item.description}</p>
-              {item.attribution && (
-                <a
-                  href={item.attribution.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors mt-1"
-                >
-                  {item.attribution.label}
-                </a>
-              )}
+        {artworks.map((item) => {
+          const isHighlighted = highlightId === item.id;
+          return (
+            <div
+              key={item.id}
+              ref={(el) => { cardRefs.current[item.id] = el; }}
+              className={`rounded-2xl border shadow-sm bg-card overflow-hidden transition-all duration-700 ${
+                isHighlighted
+                  ? "border-primary ring-2 ring-primary/40 shadow-[0_0_24px_hsla(var(--gold),0.3)]"
+                  : "border-primary/40"
+              }`}
+            >
+              <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
+              <div className="p-5 space-y-2">
+                <h2 className="text-lg font-bold text-foreground">{item.title}</h2>
+                <p className="text-sm text-muted-foreground italic">
+                  {item.artist}, {item.year}
+                </p>
+                <p className="text-sm text-foreground/80 leading-relaxed">{item.description}</p>
+                {item.attribution && (
+                  <a
+                    href={item.attribution.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors mt-1"
+                  >
+                    {item.attribution.label}
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
