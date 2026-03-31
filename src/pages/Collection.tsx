@@ -1,48 +1,31 @@
-import { useSearchParams } from "react-router-dom";
-import { Bookmark, Image, Palette, Sparkles } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Bookmark } from "lucide-react";
+import daliAtomicus from "@/assets/dali-atomicus.jpg";
 
-const sections = [
-  { value: "gallery", label: "Gallery", icon: Image },
-  { value: "artist", label: "Artist Portfolio", icon: Palette },
-  { value: "genre", label: "Genre Discovery", icon: Sparkles },
-] as const;
+interface ArtworkItem {
+  src: string;
+  title: string;
+  artist: string;
+  year: string;
+  description: string;
+  attribution?: { label: string; url: string };
+}
 
-const sectionBlurbs: Record<string, string> = {
-  artist: "The palm-up gesture reveals more works by the artist you are currently viewing.",
-};
-
-const placeholderImages: Record<string, { src: string; caption: string }[]> = {
-  gallery: [
-    { src: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=300&h=300&fit=crop", caption: "Starry Night Study" },
-    { src: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=300&fit=crop", caption: "Abstract Form III" },
-    { src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=300&h=300&fit=crop", caption: "Renaissance Portrait" },
-    { src: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=300&h=300&fit=crop", caption: "Impressionist Garden" },
-    { src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=300&h=300&fit=crop", caption: "Picasso — Cubist Era" },
-  ],
-  artist: [
-    { src: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=300&fit=crop", caption: "Dalí — Persistence of Memory" },
-    { src: "https://upload.wikimedia.org/wikipedia/en/9/9f/Dali_-_Raphaelesque_Head_Exploding.jpg", caption: "Raphaelesque Head Exploding" },
-    { src: "https://upload.wikimedia.org/wikipedia/en/b/ba/Galatea_of_the_Spheres.jpg", caption: "Galatea of the Spheres" },
-    { src: "https://upload.wikimedia.org/wikipedia/en/1/11/The_Meditative_Rose.jpg", caption: "The Meditative Rose" },
-  ],
-  genre: [
-    { src: "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=300&h=300&fit=crop", caption: "Surrealism" },
-    { src: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=300&h=300&fit=crop", caption: "Baroque" },
-    { src: "https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=300&h=300&fit=crop", caption: "Impressionism" },
-    { src: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=300&h=300&fit=crop", caption: "Modern Abstract" },
-  ],
-};
+const artworks: ArtworkItem[] = [
+  {
+    src: daliAtomicus,
+    title: "Dali Atomicus",
+    artist: "Philippe Halsman & Salvador Dalí",
+    year: "1948",
+    description:
+      "A surreal collaboration exploring physical suspension and dynamic motion. It took 28 attempts to capture this single, unedited photograph.",
+    attribution: {
+      label: "Wikimedia Commons — PDM 1.0",
+      url: "https://commons.wikimedia.org/wiki/File:Salvador_Dali_A_(Dali_Atomicus)_09633u.jpg",
+    },
+  },
+];
 
 const Collection = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const current = searchParams.get("section") || "gallery";
-
-  const handleTab = (value: string) => {
-    setSearchParams({ section: value });
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
       {/* Header */}
@@ -56,54 +39,41 @@ const Collection = () => {
         </p>
       </div>
 
-      {/* Tabs */}
-      <Tabs value={current} onValueChange={handleTab} className="w-full max-w-md">
-        <TabsList className="w-full grid grid-cols-3 bg-secondary/60 backdrop-blur-sm rounded-xl p-1 h-auto gap-1">
-          {sections.map(({ value, label, icon: Icon }) => (
-            <TabsTrigger
-              key={value}
-              value={value}
-              className="flex flex-col items-center gap-1 py-2.5 px-2 rounded-lg text-xs font-medium
-                data-[state=active]:bg-primary/15 data-[state=active]:text-primary
-                data-[state=active]:shadow-none transition-colors"
-            >
-              <Icon size={18} />
-              <span>{label}</span>
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
-        {sections.map(({ value, label }) => (
-          <TabsContent key={value} value={value} className="mt-5">
-            <div className="glass-surface rounded-2xl p-5 min-h-[320px] flex flex-col">
-              <h2 className="text-lg font-semibold text-foreground mb-1">{label}</h2>
-              {sectionBlurbs[value] && (
-                <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{sectionBlurbs[value]}</p>
+      {/* Artwork list */}
+      <div className="w-full max-w-md space-y-6">
+        {artworks.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-primary/30 bg-card overflow-hidden"
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            <div className="p-5 space-y-2">
+              <h2 className="text-lg font-bold text-foreground">{item.title}</h2>
+              <p className="text-sm text-muted-foreground italic">
+                {item.artist}, {item.year}
+              </p>
+              <p className="text-sm text-foreground/80 leading-relaxed">
+                {item.description}
+              </p>
+              {item.attribution && (
+                <a
+                  href={item.attribution.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors mt-1"
+                >
+                  {item.attribution.label}
+                </a>
               )}
-              {!sectionBlurbs[value] && <div className="mb-3" />}
-              <ScrollArea className="flex-1">
-                <div className="grid grid-cols-2 gap-3">
-                  {placeholderImages[value].map((item, i) => (
-                    <div key={i} className="space-y-1.5">
-                      <div className="rounded-xl overflow-hidden border border-primary/30 aspect-square">
-                        <img
-                          src={item.src}
-                          alt={item.caption}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <p className="text-[11px] text-muted-foreground text-center truncate px-1">
-                        {item.caption}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </ScrollArea>
             </div>
-          </TabsContent>
+          </div>
         ))}
-      </Tabs>
+      </div>
     </div>
   );
 };
