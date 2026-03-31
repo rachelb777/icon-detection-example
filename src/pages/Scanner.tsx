@@ -76,7 +76,6 @@ const Scanner = () => {
                 <p className="text-foreground font-medium">
                   <span className="text-primary">Opening artwork details…</span>
                 </p>
-                <p className="text-muted-foreground text-sm">Navigating…</p>
               </div>
             ) : null}
           </div>
