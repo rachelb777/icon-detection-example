@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { Bookmark } from "lucide-react";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
