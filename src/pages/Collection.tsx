@@ -2,7 +2,6 @@ import { Bookmark } from "lucide-react";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
 import klimtDeathLife from "@/assets/klimt-death-life.jpg";
-import hokusaiWave from "@/assets/hokusai-wave.jpg";
 
 interface ArtworkItem {
   src: string;
@@ -50,18 +49,6 @@ const artworks: ArtworkItem[] = [
       url: "https://commons.wikimedia.org/wiki/File:Gustav_Klimt_-_Death_and_Life_(First_Version)_-_1910-11.jpg",
     },
   },
-  {
-    src: hokusaiWave,
-    title: "The Great Wave off Kanagawa",
-    artist: "Katsushika Hokusai",
-    year: "c. 1831",
-    description:
-      "Hokusai's iconic woodblock print shows a massive wave towering over boats near Kanagawa. The wave's curling forms and frothy tips convey both beauty and power, while Mount Fuji appears calmly in the background. This work blends natural drama with precise, decorative patterning, and has become a symbol of Japanese art worldwide.",
-    attribution: {
-      label: "Wikimedia Commons — Public Domain",
-      url: "https://commons.wikimedia.org/wiki/File:Great_Wave_off_Kanagawa.jpg",
-    },
-  },
 ];
 
 const Collection = () => {
@@ -74,7 +61,8 @@ const Collection = () => {
         </div>
         <h1 className="font-sans text-2xl font-semibold text-gold-gradient">Museum Gallery</h1>
         <p className="text-sm text-muted-foreground max-w-xs mx-auto leading-relaxed">
-          Explore scanned artwork details in your personal gallery.
+          Explore each artwork you’ve scanned. See images, read descriptions, and learn about the artists—all in one
+          simple, easy-to-use gallery.
         </p>
       </div>
 
