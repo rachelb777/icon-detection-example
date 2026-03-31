@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="min-h-[100dvh] bg-background px-6 pt-14 pb-28">
+    <div className="min-h-[100dvh] bg-background px-6 pt-14 pb-14">
       <div className="max-w-lg mx-auto space-y-10 animate-fade-in">
         {/* Mission */}
 
