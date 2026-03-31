@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const Scanner = lazy(() => import("./pages/Scanner"));
-const Inquiry = lazy(() => import("./pages/Inquiry"));
+
 const Collection = lazy(() => import("./pages/Collection"));
 const About = lazy(() => import("./pages/About"));
 
