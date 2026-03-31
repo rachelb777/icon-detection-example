@@ -118,7 +118,7 @@ const Collection = () => {
                 cardRefs.current[item.id] = el;
               }}
               className={`rounded-2xl border shadow-sm bg-card overflow-hidden transition-all duration-500 ease-out ${
-                isHighlighted ? "border-primary border-4 ring-4 ring-primary/60 scale-105" : "border-primary/20"
+                isHighlighted ? "border-primary ring-2 ring-primary/50 scale-[1.02]" : "border-primary/40"
               }`}
             >
               <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
