@@ -83,7 +83,7 @@ const Scanner = () => {
 
         {/* Bottom instruction */}
         <div className="absolute bottom-2 left-0 right-0 text-center text-foreground text-sm px-4 z-20 font-medium">
-          Point at an artwork’s icon and press <strong>Scan Art</strong> Icon
+          Point at an artwork’s icon and press <strong>Scan Art Icon</strong>
         </div>
       </div>
 
