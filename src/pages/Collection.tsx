@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { Bookmark } from "lucide-react";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
@@ -71,10 +71,18 @@ const artworks: ArtworkItem[] = [
   },
 ];
 
+const QUERY_TO_ID: Record<string, string> = {
+  dali: "dali-atomicus",
+  rivera: "rivera-mural",
+  klimt: "klimt-death-life",
+  wave: "hokusai-wave",
+};
+
 const Collection = () => {
-  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  const highlightId = (location.state as any)?.highlightArtwork as string | undefined;
+  const artworkParam = searchParams.get("artwork");
+  const highlightId = artworkParam ? QUERY_TO_ID[artworkParam] : undefined;
 
   useEffect(() => {
     if (highlightId && cardRefs.current[highlightId]) {

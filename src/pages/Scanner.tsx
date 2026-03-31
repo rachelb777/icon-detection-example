@@ -6,10 +6,10 @@ import { Camera, VideoOff } from "lucide-react";
 const MODEL_URL = "https://teachablemachine.withgoogle.com/models/QvKC9WfFf/";
 
 const CLASS_TO_ARTWORK: Record<string, string> = {
-  "peace-hand": "dali-atomicus",
-  hand: "rivera-mural",
-  "hand-point-left": "klimt-death-life",
-  "palm-up-hand": "hokusai-wave",
+  "Class 1": "dali",
+  "Class 3": "rivera",
+  "Class 4": "klimt",
+  "Class 5": "wave",
 };
 
 // Dynamically load the TM + TF scripts
@@ -108,11 +108,11 @@ const Scanner = () => {
               setConfidence(Math.round(topProb * 100));
 
               // If confident enough and it's a known class, navigate
-              if (topProb > 0.85 && topClass !== "none" && CLASS_TO_ARTWORK[topClass]) {
+              if (topProb > 0.8 && CLASS_TO_ARTWORK[topClass]) {
                 navigatedRef.current = true;
                 setMatched(true);
                 setTimeout(() => {
-                  navigate("/collection", { state: { highlightArtwork: CLASS_TO_ARTWORK[topClass] } });
+                  navigate(`/collection?artwork=${CLASS_TO_ARTWORK[topClass]}`);
                 }, 1200);
                 return;
               }
