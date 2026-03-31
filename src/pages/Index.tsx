@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ScanLine, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import MissionDialog from "@/components/MissionDialog";
 import heroImage from "@/assets/hero-museum.jpg";
 
 const Index = () => {
@@ -40,7 +39,6 @@ const Index = () => {
             Scan Icon
           </Button>
         </Link>
-        <MissionDialog />
       </div>
     </div>
   );
