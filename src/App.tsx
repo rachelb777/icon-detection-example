@@ -9,11 +9,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const Scanner = lazy(() => import("./pages/Scanner"));
-
+const Inquiry = lazy(() => import("./pages/Inquiry"));
 const Collection = lazy(() => import("./pages/Collection"));
 const About = lazy(() => import("./pages/About"));
-
-
 
 const queryClient = new QueryClient();
 
@@ -27,7 +25,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/scanner" element={<Scanner />} />
-            
             <Route path="/collection" element={<Collection />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
