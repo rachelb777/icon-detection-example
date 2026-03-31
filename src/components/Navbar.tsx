@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, ScanLine, Lightbulb, Bookmark } from "lucide-react";
+import { Home, ScanLine, Lightbulb, Bookmark, Info } from "lucide-react";
 
 const navItems = [
   { path: "/", icon: Home, label: "Home" },
   { path: "/scanner", icon: ScanLine, label: "Icon Scan" },
   { path: "/inquiry", icon: Lightbulb, label: "Insights" },
   { path: "/collection", icon: Bookmark, label: "Gallery" },
+  { path: "/about", icon: Info, label: "About" },
 ];
 
 const Navbar = () => {
