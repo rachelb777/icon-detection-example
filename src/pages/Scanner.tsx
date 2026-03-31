@@ -4,43 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Camera } from "lucide-react";
 import blurryArtwork from "@/assets/blurry-artwork.jpg";
 
-const gestures = [
-  {
-    label: "Save to Vault",
-    icon: (
-      <img
-        src="/assets/victory-hand.svg"
-        alt="Save to Vault"
-        className="w-12 h-12 object-contain brightness-0 invert"
-      />
-    ),
-  },
-  {
-    label: "Insights",
-    icon: <img src="/assets/raised-hand.svg" alt="Insights" className="w-12 h-12 object-contain brightness-0 invert" />,
-  },
-  {
-    label: "Artist Portfolio",
-    icon: (
-      <img
-        src="/assets/palm-up-hand.svg"
-        alt="Artist Portfolio"
-        className="w-12 h-12 object-contain brightness-0 invert"
-      />
-    ),
-  },
-  {
-    label: "Genre Discovery",
-    icon: (
-      <img
-        src="/assets/hand-point-left.svg"
-        alt="Genre Discovery"
-        className="w-12 h-12 object-contain brightness-0 invert"
-      />
-    ),
-  },
-];
-
 const Scanner = () => {
   const navigate = useNavigate();
   const [captured, setCaptured] = useState(false);
@@ -91,32 +54,11 @@ const Scanner = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/60" />
         </div>
 
-        {/* HUD top-left */}
-        <div className="absolute top-4 left-4 text-[11px] text-white drop-shadow-sm tracking-widest uppercase z-20">
-          Gesture Detection
-        </div>
-
         {/* HUD top-right live indicator */}
         <div className="absolute top-4 right-4 flex items-center gap-1.5 z-20">
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-[11px] text-white drop-shadow-sm tracking-wide uppercase">Live</span>
         </div>
-
-        {/* Gesture Legend */}
-        {!captured && (
-          <div className="absolute bottom-14 left-0 right-0 flex justify-center gap-6 z-20 drop-shadow-md">
-            {gestures.map((g) => (
-              <div key={g.label} className="flex flex-col items-center gap-1.5">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-2 shadow-[0_0_8px_rgba(255,255,255,0.15)]">
-                  {g.icon}
-                </div>
-                <span className="text-[10px] text-white font-bold drop-shadow-sm tracking-wide uppercase">
-                  {g.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
 
         {/* Recognition overlay */}
         {captured && (
@@ -132,7 +74,7 @@ const Scanner = () => {
                   ✓
                 </div>
                 <p className="text-foreground font-medium">
-                  Gesture detected: <span className="text-primary">Inquiry</span>
+                  <span className="text-primary">Opening artwork details…</span>
                 </p>
                 <p className="text-muted-foreground text-sm">Navigating…</p>
               </div>
