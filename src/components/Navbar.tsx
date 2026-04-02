@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(220,10%,8%)] border-b border-[hsl(var(--gold))]">
+    <nav className="relative w-full z-50 bg-[hsl(220,10%,8%)] border-b border-[hsl(var(--gold))]">
       <div className="flex items-center justify-around px-4 py-3">
         {navItems.map(({ path, icon: Icon, label, focal }) => {
           const isActive = location.pathname === path;
