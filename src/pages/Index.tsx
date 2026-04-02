@@ -32,10 +32,7 @@ const Index = () => {
       <div className="relative z-10 flex flex-col items-center gap-6 pb-24 animate-fade-in">
         {/* Promo card — left-aligned */}
         <div className="w-full px-6 flex justify-start">
-          <div
-            className="rounded-lg p-0"
-            style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}
-          >
+          <div className="rounded-lg p-0" style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}>
             <div className="relative w-full">
               <img
                 src={cardImage}
@@ -44,7 +41,9 @@ const Index = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 p-3 rounded-b">
                 <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
-                  Want more time to enjoy art? Save it for later – here's how…
+                  Want more time to enjoy art?
+                  <br />
+                  Save it for later – here's how…
                 </p>
               </div>
             </div>
