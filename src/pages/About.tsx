@@ -8,19 +8,19 @@ const About = () => {
         {/* Brand Header */}
         <div className="text-center pt-2">
           <h1
-            className="text-xs font-light tracking-[0.4em] uppercase text-white/40"
-            style={{ textShadow: "0 0 15px rgba(255,191,0,0.2)" }}
+            className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
+            style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
           >
             Museum Lens
           </h1>
         </div>
 
         {/* Mission */}
-        <section className="space-y-5 pb-10 border-b border-white/10">
-          <h2 className="text-sm font-light tracking-widest uppercase text-gold-gradient">
+        <section className="space-y-5 mt-12 pb-10 border-b border-white/10">
+          <h2 className="text-2xl font-light tracking-widest uppercase text-white">
             Our Mission
           </h2>
-          <div className="space-y-4 text-white/70 leading-loose">
+          <div className="space-y-4 text-white/75 leading-loose">
             <p>
               Museum Lens is designed for <span className="text-white/90 font-medium">ease and clarity</span>. Art
               should be experienced—not decoded.
