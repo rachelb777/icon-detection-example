@@ -44,7 +44,7 @@ const Index = () => {
                   Save it for later – here's how…
                 </p>
               </div>
-              <span className="absolute top-3 right-3 bg-[hsl(var(--gold))] text-black text-xs sm:text-sm font-extrabold tracking-widest px-3 py-1 rounded drop-shadow-md">
+              <span className="absolute top-3 right-3 px-6 py-3 rounded-full bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_0_12px_rgba(255,191,0,0.6),0_0_25px_rgba(255,191,0,0.3)] text-[#FFBF00] text-[10px] font-bold tracking-[0.15em] uppercase transition-all duration-500 hover:bg-white/[0.08]">
                 SCAN NOW
               </span>
             </div>
