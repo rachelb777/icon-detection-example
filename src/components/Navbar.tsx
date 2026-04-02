@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(220,10%,8%)] border-b border-[hsl(var(--gold))]">
+    <nav className="relative w-full z-50 bg-[hsl(220,10%,8%)] border-b border-[hsl(var(--gold))]">
       <div className="flex items-center justify-around px-4 py-3">
         {navItems.map(({ path, icon: Icon, label, focal }) => {
           const isActive = location.pathname === path;
@@ -21,13 +21,13 @@ const Navbar = () => {
               key={path}
               to={path}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200 uppercase tracking-widest text-[11px] ${
-                focal ? "font-bold" : "font-medium"
+                focal ? "font-extrabold" : "font-medium"
               } ${
                 isActive
                   ? "text-[hsl(var(--gold))]"
                   : "text-white/60 hover:text-white/90"
               }`}
-              style={focal ? { textShadow: "0 0 12px rgba(201, 150, 59, 0.4)" } : undefined}
+              style={focal ? { textShadow: "0 0 18px rgba(201, 150, 59, 0.7), 0 0 36px rgba(201, 150, 59, 0.3)" } : undefined}
             >
               <Icon size={16} strokeWidth={isActive ? 2.5 : 1.5} />
               <span>{label}</span>
