@@ -18,7 +18,7 @@ const Index = () => {
 
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-4 flex-[0_0_25%] animate-fade-in">
-        <h1 className="text-5xl font-black tracking-[0.1em] text-[#0A0A0A] drop-shadow-[0_0_25px_rgba(255,191,0,0.6)] uppercase">
+        <h1 className="text-5xl font-black tracking-[0.1em] text-[#0A0A0A] uppercase" style={{ filter: 'drop-shadow(0 0 12px rgba(255, 191, 0, 0.9)) drop-shadow(0 0 25px rgba(255, 191, 0, 0.4))' }}>
           MUSEUM LENS
         </h1>
       </div>
