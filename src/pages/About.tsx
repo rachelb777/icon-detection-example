@@ -15,23 +15,24 @@ const About = () => {
           </h1>
         </div>
 
-        {/* Mission */}
-        <section className="space-y-5 mt-12 pb-10 border-b border-white/10">
+        {/* Mission Pillars */}
+        <section className="mt-12 space-y-8 pb-10 border-b border-white/10">
           <h2 className="text-2xl font-light tracking-widest uppercase text-white">
             Our Mission
           </h2>
-          <div className="space-y-4 text-white/75 leading-loose">
-            <p>
-              Museum Lens is designed for <span className="text-white/90 font-medium">ease and clarity</span>. Art
-              should be experienced—not decoded.
+
+          <div className="space-y-7">
+            <p className="text-white/75 leading-loose">
+              <span className="text-[hsl(var(--gold))] font-medium">Experience First.</span>{" "}
+              No dense labels. No long reading. Just you and the art.
             </p>
-            <p>
-              Instead of long labels and dense text, Museum Lens uses simple visual icons to guide you. Just scan an
-              icon next to an artwork to explore its story in a clear, focused way.
+            <p className="text-white/75 leading-loose">
+              <span className="text-[hsl(var(--gold))] font-medium">Scan to Explore.</span>{" "}
+              Look for the Museum Lens icon on the plaque next to the artwork.
             </p>
-            <p>
-              Whether you feel overwhelmed by too much information or just want a more immersive experience, Museum Lens
-              helps you connect with art—without distraction.
+            <p className="text-white/75 leading-loose">
+              <span className="text-[hsl(var(--gold))] font-medium">Clarity at a Tap.</span>{" "}
+              Scan the icon to unlock the story in a simple, focused way.
             </p>
           </div>
         </section>
@@ -42,8 +43,7 @@ const About = () => {
             How to Use
           </h2>
           <p className="text-white/75 leading-loose">
-            Scan the icon next to an artwork to instantly view its details. Browse the gallery to explore more pieces at
-            your own pace.
+            Find a Museum Lens icon, point your camera, and let the art speak for itself.
           </p>
         </section>
       </div>
