@@ -151,10 +151,10 @@ const Collection = () => {
         {/* Icon Scan button */}
         <div className="w-full flex justify-center mt-4">
           <Link to="/scanner">
-            <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-full glow-gold">
-              <ScanLine size={20} />
+            <button className="inline-flex items-center gap-3 px-12 py-6 rounded-full bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(255,191,0,0.15)] text-[hsl(var(--gold))] text-xs font-medium tracking-[0.3em] uppercase hover:bg-white/[0.08] transition-all duration-500">
+              <ScanLine size={16} />
               Icon Scan
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
