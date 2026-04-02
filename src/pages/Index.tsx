@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { ScanLine } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-museum.jpg";
 import cardImage from "@/assets/card2_mom_girl_art.jpg";
 
