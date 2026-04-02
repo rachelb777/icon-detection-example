@@ -38,10 +38,10 @@ const About = () => {
 
         {/* How to Use */}
         <section className="space-y-5">
-          <h2 className="text-sm font-light tracking-widest uppercase text-gold-gradient">
+          <h2 className="text-2xl font-light tracking-widest uppercase text-white">
             How to Use
           </h2>
-          <p className="text-white/70 leading-loose">
+          <p className="text-white/75 leading-loose">
             Scan the icon next to an artwork to instantly view its details. Browse the gallery to explore more pieces at
             your own pace.
           </p>
