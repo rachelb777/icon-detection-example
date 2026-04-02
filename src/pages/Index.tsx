@@ -44,8 +44,8 @@ const Index = () => {
                   Save it for later – here's how…
                 </p>
               </div>
-              <span className="absolute bottom-3 right-3 text-xs sm:text-sm font-semibold tracking-wide text-[hsl(var(--gold))] drop-shadow-md">
-                Scan Now
+              <span className="absolute top-3 right-3 bg-[hsl(var(--gold))] text-black text-xs sm:text-sm font-extrabold tracking-widest px-3 py-1 rounded drop-shadow-md">
+                SCAN NOW
               </span>
             </div>
           </Link>
