@@ -133,7 +133,7 @@ const Collection = () => {
     <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
       {/* Header + always-visible Icon Scan button */}
       <div className="text-center space-y-4">
-        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Museum Gallery</h1>
+        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Gallery</h1>
         <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
           {visibleArtworks.length === 0
             ? "No artworks yet — start scanning icons to fill your gallery!"
