@@ -6,7 +6,7 @@ import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
 import klimtDeathLife from "@/assets/klimt-death-life.jpg";
 import hokusaiWave from "@/assets/hokusai-wave.jpg";
-import { ScanLine } from "lucide-react";
+
 import { Link } from "react-router-dom"; // make sure Link is imported
 
 interface ArtworkItem {
