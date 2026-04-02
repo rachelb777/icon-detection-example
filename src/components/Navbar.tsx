@@ -27,7 +27,7 @@ const Navbar = () => {
                   ? "text-[hsl(var(--gold))]"
                   : "text-white/60 hover:text-white/90"
               }`}
-              style={focal ? { textShadow: "0 0 12px rgba(201, 150, 59, 0.4)" } : undefined}
+              style={focal ? { textShadow: "0 0 18px rgba(201, 150, 59, 0.7), 0 0 36px rgba(201, 150, 59, 0.3)" } : undefined}
             >
               <Icon size={16} strokeWidth={isActive ? 2.5 : 1.5} />
               <span>{label}</span>
