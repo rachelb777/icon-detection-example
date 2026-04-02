@@ -30,9 +30,9 @@ const Index = () => {
 
       {/* Bottom section — Card + CTA */}
       <div className="relative z-10 flex flex-col items-center gap-6 pb-24 animate-fade-in">
-        {/* Promo card — left-aligned */}
+        {/* Promo card — clickable link to Scanner */}
         <div className="w-full px-6 flex justify-center -translate-x-[10%]">
-          <div className="rounded-lg p-0" style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}>
+          <Link to="/scanner" className="block rounded-lg transition-transform duration-300 hover:scale-105" style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}>
             <div className="relative w-full">
               <img
                 src={cardImage}
@@ -46,16 +46,12 @@ const Index = () => {
                   Save it for later – here's how…
                 </p>
               </div>
+              <span className="absolute bottom-3 right-3 text-xs sm:text-sm font-semibold tracking-wide text-gold drop-shadow-md">
+                Scan Now
+              </span>
             </div>
-          </div>
+          </Link>
         </div>
-
-        <Link to="/scanner">
-          <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-full glow-gold">
-            <ScanLine size={20} />
-            Icon Scan
-          </Button>
-        </Link>
       </div>
     </div>
   );
