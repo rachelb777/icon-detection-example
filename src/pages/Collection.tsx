@@ -136,7 +136,7 @@ const Collection = () => {
         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
           <Bookmark size={32} className="text-primary" />
         </div>
-        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Museum Gallery</h1>
+        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Gallery</h1>
         <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
           {visibleArtworks.length === 0
             ? "No artworks yet — start scanning icons to fill your gallery!"
