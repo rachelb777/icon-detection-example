@@ -30,7 +30,7 @@ const Index = () => {
       <div className="relative z-10 flex flex-col items-center gap-6 pb-24 animate-fade-in">
         {/* Promo card — clickable link to Scanner */}
         <div className="w-full px-6 flex justify-center -translate-x-[10%] -translate-y-[50%]">
-          <Link to="/scanner" className="block rounded-lg transition-transform duration-300 hover:scale-105" style={{ width: "31.25vw", minWidth: 250, maxWidth: 450, boxShadow: "0 0 30px 0 rgba(201, 150, 59, 0.25)" }}>
+          <Link to="/scanner" className="block rounded-lg transition-transform duration-300 hover:scale-105" style={{ width: "31.25vw", minWidth: 250, maxWidth: 450, boxShadow: "0 0 40px 8px rgba(201, 150, 59, 0.5), 0 0 80px 16px rgba(201, 150, 59, 0.25)" }}>
             <div className="relative w-full">
               <img
                 src={cardImage}
