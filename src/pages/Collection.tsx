@@ -201,7 +201,7 @@ const Collection = () => {
                       <span
                         className={`inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
                       >
-                        <Check size={16} /> Saved ✓
+                        <Check size={16} /> Saved
                       </span>
                     ) : (
                       <Button size="sm" onClick={() => handleSave(item.id)} className="gap-1.5">
