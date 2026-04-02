@@ -21,7 +21,7 @@ const Navbar = () => {
               key={path}
               to={path}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all duration-200 uppercase tracking-widest text-[11px] ${
-                focal ? "font-bold" : "font-medium"
+                focal ? "font-extrabold" : "font-medium"
               } ${
                 isActive
                   ? "text-[hsl(var(--gold))]"
