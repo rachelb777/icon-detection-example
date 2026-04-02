@@ -11,11 +11,12 @@ const Index = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Museum conservatory with glass dome and ocean view"
-          className="w-full h-full object-cover"
+          alt="Museum gallery with dramatic golden lighting"
+          className="w-full h-full object-cover blur-[2px]"
           width={1280}
           height={960}
         />
+        <div className="absolute inset-0 bg-[hsla(220,10%,5%,0.45)]" />
       </div>
 
       {/* Top section — title & subtitle in top 25% */}
@@ -32,17 +33,14 @@ const Index = () => {
       <div className="relative z-10 flex flex-col items-center gap-6 pb-24 animate-fade-in">
         {/* Promo card — left-aligned */}
         <div className="w-full px-6 flex justify-start">
-          <div
-            className="rounded-lg bg-[hsla(220,10%,10%,0.85)] p-2 shadow-lg"
-            style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}
-          >
+          <div className="rounded-lg p-2" style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}>
             <div className="relative w-full">
               <img
                 src={cardImage}
                 alt="Mother and daughter enjoying art in a gallery"
                 className="w-full h-auto rounded object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b">
+              <div className="absolute bottom-0 left-0 right-0 p-3 rounded-b">
                 <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
                   Want more time to enjoy art? Save it for later – here's how…
                 </p>
