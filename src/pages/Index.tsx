@@ -33,14 +33,14 @@ const Index = () => {
         {/* Promo card — left-aligned */}
         <div className="w-full px-6 flex justify-start">
           <div
-            className="rounded-lg shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
-            style={{ width: "25vw", minWidth: 200, maxWidth: 360  marginLeft: "25vw" }}
+            className="rounded-lg p-0"
+            style={{ width: "25vw", minWidth: 200, maxWidth: 360 }}
           >
             <div className="relative w-full">
               <img
                 src={cardImage}
                 alt="Mother and daughter enjoying art in a gallery"
-                className="w-full h-auto rounded object-cover"
+                className="w-full h-auto rounded object-contain"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b">
                 <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
