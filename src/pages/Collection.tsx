@@ -134,7 +134,7 @@ const Collection = () => {
       {/* Header + always-visible Icon Scan button */}
       <div className="text-center space-y-4">
         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-          <Bookmark size={32} className="text-primary" />
+          {/*<Bookmark size={32} className="text-primary" />*/}
         </div>
         <h1 className="font-sans text-3xl font-bold text-gold-gradient">Gallery</h1>
         <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
