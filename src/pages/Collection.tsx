@@ -154,7 +154,7 @@ const Collection = () => {
         </div>
       </div>
 
-      {/* Empty state */}
+      {/* Empty state 
       {visibleArtworks.length === 0 && (
         <div className="flex-1 flex items-center justify-center py-16">
           <div className="text-center space-y-3 opacity-50">
@@ -163,6 +163,7 @@ const Collection = () => {
           </div>
         </div>
       )}
+      */}
 
       {/* Artwork list */}
       {visibleArtworks.length > 0 && (
