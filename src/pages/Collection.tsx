@@ -108,9 +108,7 @@ const Collection = () => {
   const [justSavedId, setJustSavedId] = useState<string | null>(null);
 
   // Build visible artworks: saved ones + the currently detected one
-  const visibleArtworks = ALL_ARTWORKS.filter(
-    (a) => savedIds.includes(a.id) || a.id === detectedId
-  );
+  const visibleArtworks = ALL_ARTWORKS.filter((a) => savedIds.includes(a.id) || a.id === detectedId);
 
   useEffect(() => {
     if (detectedId && cardRefs.current[detectedId]) {
@@ -154,6 +152,15 @@ const Collection = () => {
         </div>
       )}
 
+      <div className="w-full flex justify-center mt-4">
+        <Link to="/scanner">
+          <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-full glow-gold">
+            <ScanLine size={20} />
+            Icon Scan
+          </Button>
+        </Link>
+      </div>
+
       {/* Artwork list */}
       {visibleArtworks.length > 0 && (
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -190,15 +197,13 @@ const Collection = () => {
                   )}
                   <div className="pt-2">
                     {saved ? (
-                      <span className={`inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity ${justSaved ? "animate-fade-in" : ""}`}>
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
+                      >
                         <Check size={16} /> Saved ✓
                       </span>
                     ) : (
-                      <Button
-                        size="sm"
-                        onClick={() => handleSave(item.id)}
-                        className="gap-1.5"
-                      >
+                      <Button size="sm" onClick={() => handleSave(item.id)} className="gap-1.5">
                         <Bookmark size={14} />
                         Save to Gallery
                       </Button>
