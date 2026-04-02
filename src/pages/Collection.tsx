@@ -164,15 +164,6 @@ const Collection = () => {
         </div>
       )}
 
-      <div className="w-full flex justify-center mt-4">
-        <Link to="/scanner">
-          <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-full glow-gold">
-            <ScanLine size={20} />
-            Icon Scan
-          </Button>
-        </Link>
-      </div>
-
       {/* Artwork list */}
       {visibleArtworks.length > 0 && (
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
