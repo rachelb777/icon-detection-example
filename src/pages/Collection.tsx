@@ -131,8 +131,8 @@ const Collection = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
-      {/* Header */}
-      <div className="text-center space-y-2">
+      {/* Header + always-visible Icon Scan button */}
+      <div className="text-center space-y-4">
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
           <Bookmark size={28} className="text-primary" />
         </div>
@@ -142,6 +142,16 @@ const Collection = () => {
             ? "Your gallery is empty. Scan an icon to discover artworks."
             : "Explore each artwork you've discovered. Save them to keep them in your gallery."}
         </p>
+
+        {/* Icon Scan button */}
+        <div className="w-full flex justify-center mt-4">
+          <Link to="/scanner">
+            <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-full glow-gold">
+              <ScanLine size={20} />
+              Icon Scan
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Empty state */}
