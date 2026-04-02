@@ -42,7 +42,7 @@ const Index = () => {
                 alt="Mother and daughter enjoying art in a gallery"
                 className="w-full h-auto rounded object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b">
+              <div className="absolute bottom-0 left-0 right-0 p-3 rounded-b">
                 <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
                   Want more time to enjoy art? Save it for later – here's how…
                 </p>
