@@ -27,7 +27,7 @@ const Index = () => {
       <div className="flex-1" />
 
       {/* Bottom section — Card + CTA */}
-      <div className="relative z-10 flex flex-col items-center gap-6 pb-12 mb-12 animate-fade-in">
+      <div className="relative z-10 flex flex-col items-center gap-6 pb-6 mb-6 -mt-[8%] animate-fade-in">
         {/* Promo card — clickable link to Scanner */}
         <div className="w-[90%] max-w-md mx-auto flex justify-center">
           <Link to="/scanner" className="block rounded-lg transition-transform duration-300 hover:scale-105" style={{ width: "36vw", minWidth: 290, maxWidth: 520, boxShadow: "0 0 40px 8px rgba(201, 150, 59, 0.5), 0 0 80px 16px rgba(201, 150, 59, 0.25)" }}>
