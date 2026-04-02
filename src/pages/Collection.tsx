@@ -130,15 +130,18 @@ const Collection = () => {
   const isSaved = (id: string) => savedIds.includes(id);
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
-      {/* Header + always-visible Icon Scan button */}
-      <div className="text-center space-y-4">
-        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Gallery</h1>
-        <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
-          {visibleArtworks.length === 0
-            ? "No artworks yet — start scanning icons to fill your gallery!"
-            : "Here are the artworks you've saved. Keep discovering more!"}
-        </p>
+    <div className="min-h-screen bg-[#0A0A0A] flex flex-col items-center px-4 pt-14 pb-24 space-y-6 relative overflow-hidden">
+      {/* Ambient amber mesh glow */}
+      <div className="absolute bottom-[-80px] right-[-60px] w-[320px] h-[320px] rounded-full bg-[hsla(var(--gold),0.07)] blur-[120px] pointer-events-none" />
+
+      {/* Header */}
+      <div className="text-center space-y-4 relative z-10">
+        <h1
+          className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
+          style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
+        >
+          Museum Lens
+        </h1>
 
         {/* Icon Scan button */}
         <div className="w-full flex justify-center mt-4">
@@ -151,21 +154,10 @@ const Collection = () => {
         </div>
       </div>
 
-      {/* Empty state 
-      {visibleArtworks.length === 0 && (
-        <div className="flex-1 flex items-center justify-center py-16">
-          <div className="text-center space-y-3 opacity-50">
-            <Bookmark size={48} className="text-muted-foreground mx-auto" />
-            <p className="text-muted-foreground text-sm">No artworks yet</p>
-          </div>
-        </div>
-      )}
-      */}
-
       {/* Artwork list */}
       {visibleArtworks.length > 0 && (
         <div
-          className={`w-full max-w-4xl grid gap-6 ${
+          className={`w-full max-w-4xl grid gap-6 relative z-10 ${
             visibleArtworks.length === 1 ? "justify-items-center" : "grid-cols-1 md:grid-cols-2"
           }`}
         >
@@ -179,23 +171,23 @@ const Collection = () => {
                 ref={(el) => {
                   cardRefs.current[item.id] = el;
                 }}
-                className={`rounded-2xl border shadow-sm bg-card overflow-hidden transition-all duration-500 ease-out ${
-                  isHighlighted ? "border-primary ring-2 ring-primary/50 scale-[1.02]" : "border-primary/40"
+                className={`rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
+                  isHighlighted ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]" : "border-white/10"
                 }`}
               >
                 <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
                 <div className="p-5 space-y-2">
-                  <h2 className="text-lg font-bold text-foreground">{item.title}</h2>
-                  <p className="text-sm text-muted-foreground italic">
+                  <h2 className="text-lg font-light tracking-wide text-white">{item.title}</h2>
+                  <p className="text-sm text-white/50 italic">
                     {item.artist}, {item.year}
                   </p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
                   {item.attribution && (
                     <a
                       href={item.attribution.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground transition-colors mt-1"
+                      className="inline-block text-[11px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1"
                     >
                       {item.attribution.label}
                     </a>
@@ -203,12 +195,16 @@ const Collection = () => {
                   <div className="pt-2">
                     {saved ? (
                       <span
-                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
+                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
                       >
                         <Check size={16} /> Saved
                       </span>
                     ) : (
-                      <Button size="sm" onClick={() => handleSave(item.id)} className="gap-1.5">
+                      <Button
+                        size="sm"
+                        onClick={() => handleSave(item.id)}
+                        className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
+                      >
                         <Bookmark size={14} />
                         Save to Gallery
                       </Button>
