@@ -142,6 +142,11 @@ const Collection = () => {
         >
           Museum Lens
         </h1>
+        <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
+          {visibleArtworks.length === 0
+            ? "No artworks yet — start scanning icons to fill your gallery!"
+            : "Here are the artworks you've saved. Keep discovering more!"}
+        </p>
 
         {/* Icon Scan button */}
         <div className="w-full flex justify-center mt-4">
