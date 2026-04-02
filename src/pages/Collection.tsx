@@ -133,14 +133,14 @@ const Collection = () => {
     <div className="min-h-screen flex flex-col items-center px-4 pt-8 pb-24 space-y-6">
       {/* Header + always-visible Icon Scan button */}
       <div className="text-center space-y-4">
-        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-          <Bookmark size={28} className="text-primary" />
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+          <Bookmark size={32} className="text-primary" />
         </div>
-        <h1 className="font-sans text-2xl font-semibold text-gold-gradient">Gallery</h1>
-        <p className="text-sm text-muted-foreground max-w-xs mx-auto leading-relaxed">
+        <h1 className="font-sans text-3xl font-bold text-gold-gradient">Museum Gallery</h1>
+        <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
           {visibleArtworks.length === 0
-            ? "Your gallery is empty. Scan an icon to discover artworks."
-            : "Explore each artwork you've discovered. Save them to keep them in your gallery."}
+            ? "No artworks yet — start scanning icons to fill your gallery!"
+            : "Here are the artworks you've saved. Keep discovering more!"}
         </p>
 
         {/* Icon Scan button */}
