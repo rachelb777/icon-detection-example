@@ -137,7 +137,7 @@ const Collection = () => {
       {/* Header */}
       <div className="text-center space-y-4 relative z-10">
         <h1
-          className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
+          className="text-5xl font-semibold tracking-[0.5em] uppercase text-white"
           style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
         >
           Museum Lens
