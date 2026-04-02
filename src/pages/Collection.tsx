@@ -164,7 +164,11 @@ const Collection = () => {
 
       {/* Artwork list */}
       {visibleArtworks.length > 0 && (
-        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          className={`w-full max-w-4xl grid gap-6 ${
+            visibleArtworks.length === 1 ? "justify-items-center" : "grid-cols-1 md:grid-cols-2"
+          }`}
+        >
           {visibleArtworks.map((item) => {
             const isHighlighted = detectedId === item.id;
             const saved = isSaved(item.id);
