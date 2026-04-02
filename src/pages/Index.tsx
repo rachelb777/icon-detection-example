@@ -11,12 +11,11 @@ const Index = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Museum gallery with dramatic golden lighting"
-          className="w-full h-full object-cover blur-[2px]"
+          alt="Museum conservatory with glass dome and ocean view"
+          className="w-full h-full object-cover"
           width={1280}
           height={960}
         />
-        <div className="absolute inset-0 bg-[hsla(220,10%,5%,0.45)]" />
       </div>
 
       {/* Top section — title & subtitle in top 25% */}
