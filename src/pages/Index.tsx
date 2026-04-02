@@ -18,10 +18,8 @@ const Index = () => {
 
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-8 pb-4 flex-[0_0_25%] animate-fade-in">
-        <h1
-          className="text-5xl font-semibold tracking-[0.5em] uppercase text-[#0A0A0A] drop-shadow-[0_0_10px_rgba(255,255,255,1)]"
-        >
-          Museum Lens
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight drop-shadow-md">
+          <span className="text-gold-gradient">Museum</span> <span className="text-white drop-shadow-sm">Lens</span>
         </h1>
       </div>
 
