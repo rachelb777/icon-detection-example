@@ -54,6 +54,12 @@ const Scanner = () => {
   }, []);
 
   useEffect(() => {
+    // Reset prediction state on mount so each scan starts fresh
+    navigatedRef.current = false;
+    setPrediction(null);
+    setConfidence(0);
+    setMatched(false);
+
     let cancelled = false;
 
     async function init() {
