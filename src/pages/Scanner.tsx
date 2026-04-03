@@ -231,7 +231,7 @@ const Scanner = () => {
           <div className="absolute bottom-10 left-4 z-20 glass-surface rounded-lg px-3 py-2 space-y-0.5">
             <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Detected</p>
             <p className="text-sm font-semibold text-foreground">
-              {prediction === "none" ? "No icon" : prediction}
+              {prediction === null ? "No icon" : prediction}
             </p>
             <div className="w-full h-1 rounded-full bg-muted overflow-hidden">
               <div
