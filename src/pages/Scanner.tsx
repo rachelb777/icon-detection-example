@@ -37,7 +37,7 @@ const Scanner = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [prediction, setPrediction] = useState<string>("none");
+  const [prediction, setPrediction] = useState<string | null>(null);
   const [confidence, setConfidence] = useState(0);
   const [matched, setMatched] = useState(false);
   const [cameraActive, setCameraActive] = useState(false);
@@ -54,6 +54,12 @@ const Scanner = () => {
   }, []);
 
   useEffect(() => {
+    // Reset prediction state on mount so each scan starts fresh
+    navigatedRef.current = false;
+    setPrediction(null);
+    setConfidence(0);
+    setMatched(false);
+
     let cancelled = false;
 
     async function init() {
@@ -108,11 +114,13 @@ const Scanner = () => {
               setConfidence(Math.round(topProb * 100));
 
               // If confident enough and it's a known class, navigate
-              if (topProb > 0.8 && CLASS_TO_ARTWORK[topClass]) {
+              if (topProb > 0.9 && CLASS_TO_ARTWORK[topClass]) {
                 navigatedRef.current = true;
                 setMatched(true);
+                // Reset previous state before navigating
+                const artworkKey = CLASS_TO_ARTWORK[topClass];
                 setTimeout(() => {
-                  navigate(`/collection?artwork=${CLASS_TO_ARTWORK[topClass]}`);
+                  navigate(`/collection?artwork=${artworkKey}`);
                 }, 1200);
                 return;
               }
@@ -137,6 +145,11 @@ const Scanner = () => {
     return () => {
       cancelled = true;
       stopCamera();
+      // Clear prediction state on unmount
+      setPrediction(null);
+      setConfidence(0);
+      setMatched(false);
+      navigatedRef.current = false;
     };
   }, [navigate, stopCamera]);
 
@@ -218,7 +231,7 @@ const Scanner = () => {
           <div className="absolute bottom-10 left-4 z-20 glass-surface rounded-lg px-3 py-2 space-y-0.5">
             <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Detected</p>
             <p className="text-sm font-semibold text-foreground">
-              {prediction === "none" ? "No icon" : prediction}
+              {prediction === null ? "No icon" : prediction}
             </p>
             <div className="w-full h-1 rounded-full bg-muted overflow-hidden">
               <div
