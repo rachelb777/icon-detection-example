@@ -37,7 +37,7 @@ const Scanner = () => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [prediction, setPrediction] = useState<string>("none");
+  const [prediction, setPrediction] = useState<string | null>(null);
   const [confidence, setConfidence] = useState(0);
   const [matched, setMatched] = useState(false);
   const [cameraActive, setCameraActive] = useState(false);
