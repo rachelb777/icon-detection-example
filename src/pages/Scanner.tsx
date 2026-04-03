@@ -145,6 +145,11 @@ const Scanner = () => {
     return () => {
       cancelled = true;
       stopCamera();
+      // Clear prediction state on unmount
+      setPrediction(null);
+      setConfidence(0);
+      setMatched(false);
+      navigatedRef.current = false;
     };
   }, [navigate, stopCamera]);
 
