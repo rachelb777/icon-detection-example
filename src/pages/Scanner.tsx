@@ -114,11 +114,13 @@ const Scanner = () => {
               setConfidence(Math.round(topProb * 100));
 
               // If confident enough and it's a known class, navigate
-              if (topProb > 0.8 && CLASS_TO_ARTWORK[topClass]) {
+              if (topProb > 0.9 && CLASS_TO_ARTWORK[topClass]) {
                 navigatedRef.current = true;
                 setMatched(true);
+                // Reset previous state before navigating
+                const artworkKey = CLASS_TO_ARTWORK[topClass];
                 setTimeout(() => {
-                  navigate(`/collection?artwork=${CLASS_TO_ARTWORK[topClass]}`);
+                  navigate(`/collection?artwork=${artworkKey}`);
                 }, 1200);
                 return;
               }
