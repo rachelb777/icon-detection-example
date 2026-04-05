@@ -61,7 +61,7 @@ const Index = () => {
               <p className="text-white text-xs sm:text-sm font-light leading-relaxed">
                 Want more time to enjoy art?
                 <br />
-                Save it for later.
+                Save it for later!
               </p>
             </div>
           </Link>
