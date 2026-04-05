@@ -32,7 +32,7 @@ const Index = () => {
       <div className="flex-1" />
 
       {/* Bottom section — Card + CTA */}
-      <div className="relative z-10 flex flex-col items-center gap-6 pb-16 mb-6 -mt-[8%] animate-fade-in">
+      <div className="relative z-10 flex flex-col items-center gap-6 pb-16 mb-6 <div className="relative z-10 flex flex-col items-center gap-6 pb-16 mb-6 -mt-[12%] animate-fade-in"> animate-fade-in">
         {/* Promo card — clickable link to Scanner */}
         <div className="w-[90%] max-w-md mx-auto flex justify-center">
           <Link
