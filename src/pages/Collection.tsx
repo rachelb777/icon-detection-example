@@ -136,19 +136,10 @@ const Collection = () => {
 
       {/* Header */}
       <div className="text-center space-y-4 relative z-10">
-         {/* Header */}
-      <div className="text-center space-y-4 relative z-10">
         <h1
           className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
           style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
         >
-          Museum Lens
-        </h1>
-        <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
-          {visibleArtworks.length === 0
-            ? "No artworks yet — start scanning icons to fill your gallery!"
-            : "Here are the artworks you've saved. Keep discovering more!"}
-        </p>
           Gallery
         </h1>
         <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
