@@ -52,17 +52,22 @@ const Index = () => {
                 alt="Mother and daughter enjoying art in a gallery"
                 className="w-full h-auto object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 flex items-center gap-2 px-3 py-2 bg-black/60">
-                <Camera className="w-4 h-4 text-white shrink-0" />
-                <span className="text-white text-xs font-medium tracking-wide">Tap to Scan</span>
+              <div
+                className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end pb-4 pt-16"
+                style={{
+                  background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%)",
+                }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <Camera className="w-4 h-4 text-white shrink-0" />
+                  <span className="text-white text-xs font-medium tracking-wide">Tap to Scan</span>
+                </div>
+                <p className="text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
+                  Want more time to enjoy art?
+                  <br />
+                  Save it for later!
+                </p>
               </div>
-            </div>
-            <div className="px-4 py-3">
-              <p className="text-white text-xs sm:text-sm font-light leading-relaxed">
-                Want more time to enjoy art?
-                <br />
-                Save it for later!
-              </p>
             </div>
           </Link>
         </div>
