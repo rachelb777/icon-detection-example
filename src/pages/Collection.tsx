@@ -135,18 +135,16 @@ const Collection = () => {
       <div className="absolute bottom-[-80px] right-[-60px] w-[320px] h-[320px] rounded-full bg-[hsla(var(--gold),0.07)] blur-[120px] pointer-events-none" />
 
       {/* Header */}
-      <div className="text-center space-y-4 relative z-10">
-        <h1
-          className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
-          style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
-        >
-          Museum Lens
-        </h1>
-        <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
-          {visibleArtworks.length === 0
-            ? "No artworks yet — start scanning icons to fill your gallery!"
-            : "Here are the artworks you've saved. Keep discovering more!"}
-        </p>
+<div className="text-center space-y-4 relative z-10">
+  <h1 className="font-sans text-3xl sm:text-4xl font-semibold text-gold-gradient">
+    Gallery
+  </h1>
+  <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
+    {visibleArtworks.length === 0
+      ? "No artworks yet — start scanning icons to fill your gallery!"
+      : "Here are the artworks you've saved. Keep discovering more!"}
+  </p>
+</div>
 
         {/* Icon Scan button */}
         <div className="w-full flex justify-center mt-4">
