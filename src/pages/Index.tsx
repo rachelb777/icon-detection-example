@@ -18,7 +18,12 @@ const Index = () => {
 
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-4 flex-[0_0_25%] animate-fade-in">
-        <h1 className="text-5xl font-black tracking-[0.1em] text-[#0A0A0A] uppercase" style={{ filter: 'drop-shadow(0 0 8px rgba(255, 191, 0, 0.6)) drop-shadow(0 0 18px rgba(255, 191, 0, 0.25))' }}>
+        <h1
+          className="text-5xl font-black tracking-[0.1em] text-[#0A0A0A] uppercase"
+          style={{
+            filter: "drop-shadow(0 0 8px rgba(255, 191, 0, 0.6)) drop-shadow(0 0 18px rgba(255, 191, 0, 0.25))",
+          }}
+        >
           MUSEUM LENS
         </h1>
       </div>
@@ -30,7 +35,16 @@ const Index = () => {
       <div className="relative z-10 flex flex-col items-center gap-6 pb-16 mb-6 -mt-[8%] animate-fade-in">
         {/* Promo card — clickable link to Scanner */}
         <div className="w-[90%] max-w-md mx-auto flex justify-center">
-          <Link to="/scanner" className="block rounded-lg transition-transform duration-300 hover:scale-105" style={{ width: "36vw", minWidth: 290, maxWidth: 520, boxShadow: "0 0 40px 8px rgba(201, 150, 59, 0.5), 0 0 80px 16px rgba(201, 150, 59, 0.25)" }}>
+          <Link
+            to="/scanner"
+            className="block rounded-lg transition-transform duration-300 hover:scale-105"
+            style={{
+              width: "36vw",
+              minWidth: 290,
+              maxWidth: 520,
+              boxShadow: "0 0 40px 8px rgba(201, 150, 59, 0.5), 0 0 80px 16px rgba(201, 150, 59, 0.25)",
+            }}
+          >
             <div className="relative w-full">
               <img
                 src={cardImage}
@@ -41,7 +55,7 @@ const Index = () => {
                 <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
                   Want more time to enjoy art?
                   <br />
-                  Save it for later – here's how…
+                  Save it for later!
                 </p>
               </div>
               <span className="absolute top-3 right-3 px-6 py-3 rounded-full bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_0_12px_rgba(255,191,0,0.6),0_0_25px_rgba(255,191,0,0.3)] text-[#FFBF00] text-[10px] font-bold tracking-[0.15em] uppercase transition-all duration-500 hover:bg-white/[0.08]">
