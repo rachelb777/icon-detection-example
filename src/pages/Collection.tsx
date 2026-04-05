@@ -137,10 +137,10 @@ const Collection = () => {
       {/* Header */}
       <div className="text-center space-y-4 relative z-10">
         <h1
-          className="font-sans text-3xl sm:text-4xl font-semibold text-gold-gradient"
+          className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
           style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
         >
-          Gallery
+          Museum Lens
         </h1>
         <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
           {visibleArtworks.length === 0
@@ -176,9 +176,7 @@ const Collection = () => {
                   cardRefs.current[item.id] = el;
                 }}
                 className={`rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
-                  isHighlighted
-                    ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
-                    : "border-white/10"
+                  isHighlighted ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]" : "border-white/10"
                 }`}
               >
                 <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
