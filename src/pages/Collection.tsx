@@ -137,7 +137,7 @@ const Collection = () => {
       {/* Header */}
       <div className="text-center space-y-4 relative z-10">
         <h1
-          className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
+          className="font-sans text-3xl sm:text-4xl font-semibold text-gold-gradient"
           style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
         >
           Gallery
