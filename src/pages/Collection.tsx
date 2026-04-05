@@ -140,7 +140,7 @@ const Collection = () => {
           className="text-4xl font-extralight tracking-[0.5em] uppercase text-white"
           style={{ textShadow: "0 0 25px rgba(255,191,0,0.4)" }}
         >
-          Gallery
+          Museum Lens
         </h1>
         <p className="text-sm font-light tracking-wide text-white/60 max-w-md mx-auto mt-4">
           {visibleArtworks.length === 0
