@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Camera } from "lucide-react";
 import heroImage from "@/assets/hero-museum.jpg";
 import cardImage from "@/assets/card2_mom_girl_art.jpg";
 
