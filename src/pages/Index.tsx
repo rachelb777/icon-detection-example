@@ -37,7 +37,7 @@ const Index = () => {
         <div className="w-[90%] max-w-md mx-auto flex justify-center">
           <Link
             to="/scanner"
-            className="block rounded-lg transition-transform duration-300 hover:scale-105"
+            className="block rounded-lg overflow-hidden bg-black transition-transform duration-300 hover:scale-105"
             style={{
               width: "36vw",
               minWidth: 290,
@@ -49,18 +49,19 @@ const Index = () => {
               <img
                 src={cardImage}
                 alt="Mother and daughter enjoying art in a gallery"
-                className="w-full h-auto rounded object-contain"
+                className="w-full h-auto object-contain"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-3 rounded-b">
-                <p className="text-white text-xs sm:text-sm font-medium leading-snug drop-shadow-md">
-                  Want more time to enjoy art?
-                  <br />
-                  Save it for later!
-                </p>
+              <div className="absolute bottom-0 left-0 right-0 flex items-center gap-2 px-3 py-2 bg-black/60">
+                <Camera className="w-4 h-4 text-white shrink-0" />
+                <span className="text-white text-xs font-medium tracking-wide">Tap to Scan</span>
               </div>
-              <span className="absolute top-3 right-3 px-6 py-3 rounded-full bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_0_12px_rgba(255,191,0,0.6),0_0_25px_rgba(255,191,0,0.3)] text-[#FFBF00] text-[10px] font-bold tracking-[0.15em] uppercase transition-all duration-500 hover:bg-white/[0.08]">
-                SCAN NOW
-              </span>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-white text-xs sm:text-sm font-light leading-relaxed">
+                Want more time to enjoy art?
+                <br />
+                Save it for later.
+              </p>
             </div>
           </Link>
         </div>
