@@ -159,12 +159,13 @@ const Collection = () => {
       </div>
 
       {/* Artwork list */}
-      {visibleArtworks.length > 0 &&
-        (() => {
-          const featured = visibleArtworks.find((a) => a.id === "rivera-mural");
-          const rest = visibleArtworks.filter((a) => a.id !== "rivera-mural");
-
-          const renderCard = (item: ArtworkItem, className?: string) => {
+      {visibleArtworks.length > 0 && (
+        <div
+          className={`w-full max-w-4xl grid gap-6 relative z-10 ${
+            visibleArtworks.length === 1 ? "justify-items-center" : "grid-cols-1 md:grid-cols-2"
+          }`}
+        >
+          {visibleArtworks.map((item) => {
             const isHighlighted = detectedId === item.id;
             const saved = isSaved(item.id);
             const justSaved = justSavedId === item.id;
@@ -178,7 +179,7 @@ const Collection = () => {
                   isHighlighted
                     ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
                     : "border-white/10"
-                } ${className ?? ""}`}
+                }`}
               >
                 <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
                 <div className="p-5 space-y-2">
@@ -210,28 +211,17 @@ const Collection = () => {
                         onClick={() => handleSave(item.id)}
                         className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
                       >
-                        <Bookmark size={14} /> Save to Gallery
+                        <Bookmark size={14} />
+                        Save to Gallery
                       </Button>
                     )}
                   </div>
                 </div>
               </div>
             );
-          };
-
-          return (
-            <div className="w-full max-w-4xl flex flex-col items-center gap-6 relative z-10">
-              {featured && renderCard(featured, "max-w-2xl w-full")}
-              {rest.length > 0 && (
-                <div
-                  className={`w-full grid gap-6 ${rest.length === 1 ? "justify-items-center" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}
-                >
-                  {rest.map((item) => renderCard(item))}
-                </div>
-              )}
-            </div>
-          );
-        })()}
+          })}
+        </div>
+      )}
     </div>
   );
 };
