@@ -21,19 +21,6 @@ interface ArtworkItem {
 
 const ALL_ARTWORKS: ArtworkItem[] = [
   {
-    id: "dali-atomicus",
-    src: daliAtomicus,
-    title: "Dali Atomicus",
-    artist: "Philippe Halsman & Salvador Dalí",
-    year: "1948",
-    description:
-      "A surreal collaboration exploring physical suspension and dynamic motion. It took 28 attempts to capture this single, unedited photograph.",
-    attribution: {
-      label: "Wikimedia Commons — PDM 1.0",
-      url: "https://commons.wikimedia.org/wiki/File:Salvador_Dali_A_(Dali_Atomicus)_09633u.jpg",
-    },
-  },
-  {
     id: "rivera-mural",
     src: riveraMural,
     title: "Man, Controller of the Universe",
@@ -46,6 +33,21 @@ const ALL_ARTWORKS: ArtworkItem[] = [
       url: "https://commons.wikimedia.org/wiki/File:Man_Controller_of_the_Universe.jpg",
     },
   },
+
+  {
+    id: "dali-atomicus",
+    src: daliAtomicus,
+    title: "Dali Atomicus",
+    artist: "Philippe Halsman & Salvador Dalí",
+    year: "1948",
+    description:
+      "A surreal collaboration exploring physical suspension and dynamic motion. It took 28 attempts to capture this single, unedited photograph.",
+    attribution: {
+      label: "Wikimedia Commons — PDM 1.0",
+      url: "https://commons.wikimedia.org/wiki/File:Salvador_Dali_A_(Dali_Atomicus)_09633u.jpg",
+    },
+  },
+
   {
     id: "klimt-death-life",
     src: klimtDeathLife,
