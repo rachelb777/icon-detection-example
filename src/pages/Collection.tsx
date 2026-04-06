@@ -210,13 +210,22 @@ const Collection = () => {
                       {item.attribution.label}
                     </a>
                   )}
-                  <div className="pt-2">
+                  <div className="pt-2 flex items-center gap-2">
                     {saved ? (
-                      <span
-                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
-                      >
-                        <Check size={16} /> Saved
-                      </span>
+                      <>
+                        <span
+                          className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
+                        >
+                          <Check size={16} /> Saved
+                        </span>
+                        <Button
+                          size="sm"
+                          onClick={() => handleRemove(item.id)}
+                          className="gap-1 h-7 px-2 bg-transparent border border-white/20 text-white/50 hover:bg-white/10 hover:text-white/80"
+                        >
+                          <X size={12} />
+                        </Button>
+                      </>
                     ) : (
                       <Button
                         size="sm"
