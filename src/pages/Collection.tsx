@@ -102,6 +102,11 @@ function saveId(id: string) {
   }
 }
 
+function removeId(id: string) {
+  const ids = getSavedIds().filter((i) => i !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+}
+
 const Collection = () => {
   const [searchParams] = useSearchParams();
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
