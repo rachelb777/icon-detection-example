@@ -221,9 +221,9 @@ const Collection = () => {
                         <Button
                           size="sm"
                           onClick={() => handleRemove(item.id)}
-                          className="gap-1 h-7 px-2 bg-transparent border border-white/20 text-white/50 hover:bg-white/10 hover:text-white/80"
+                          className="gap-1.5 h-7 px-2.5 text-xs bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
                         >
-                          <X size={12} />
+                          Remove
                         </Button>
                       </>
                     ) : (
