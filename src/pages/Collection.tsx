@@ -134,6 +134,11 @@ const Collection = () => {
     setTimeout(() => setJustSavedId(null), 2000);
   };
 
+  const handleRemove = (id: string) => {
+    removeId(id);
+    setSavedIds(getSavedIds());
+  };
+
   const isSaved = (id: string) => savedIds.includes(id);
 
   return (
