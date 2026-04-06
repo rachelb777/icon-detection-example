@@ -221,7 +221,7 @@ const Collection = () => {
 
           return (
             <div className="w-full max-w-4xl flex flex-col items-center gap-6 relative z-10">
-              {featured && renderCard(featured, "max-w-2xl w-full sm:max-w-3xl lg:max-w-4xl")}
+              {featured && renderCard(featured, "max-w-2xl w-full")}
               {rest.length > 0 && (
                 <div
                   className={`w-full grid gap-6 ${rest.length === 1 ? "justify-items-center" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}
