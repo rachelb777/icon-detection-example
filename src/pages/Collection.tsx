@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Bookmark, Check } from "lucide-react";
+import { Bookmark, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
@@ -102,6 +102,11 @@ function saveId(id: string) {
   }
 }
 
+function removeId(id: string) {
+  const ids = getSavedIds().filter((i) => i !== id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+}
+
 const Collection = () => {
   const [searchParams] = useSearchParams();
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -127,6 +132,11 @@ const Collection = () => {
     setSavedIds(getSavedIds());
     setJustSavedId(id);
     setTimeout(() => setJustSavedId(null), 2000);
+  };
+
+  const handleRemove = (id: string) => {
+    removeId(id);
+    setSavedIds(getSavedIds());
   };
 
   const isSaved = (id: string) => savedIds.includes(id);
@@ -200,13 +210,22 @@ const Collection = () => {
                       {item.attribution.label}
                     </a>
                   )}
-                  <div className="pt-2">
+                  <div className="pt-2 flex items-center gap-2">
                     {saved ? (
-                      <span
-                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
-                      >
-                        <Check size={16} /> Saved
-                      </span>
+                      <>
+                        <span
+                          className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
+                        >
+                          <Check size={16} /> Saved
+                        </span>
+                        <Button
+                          size="sm"
+                          onClick={() => handleRemove(item.id)}
+                          className="gap-1 h-7 px-2 bg-transparent border border-white/20 text-white/50 hover:bg-white/10 hover:text-white/80"
+                        >
+                          <X size={12} />
+                        </Button>
+                      </>
                     ) : (
                       <Button
                         size="sm"
