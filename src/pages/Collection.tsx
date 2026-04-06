@@ -170,70 +170,94 @@ const Collection = () => {
         </div>
       </div>
 
-      {/* Artwork list */}
-      {visibleArtworks.length > 0 && (
-        <div
-          className={`w-full max-w-4xl grid gap-6 relative z-10 ${
-            visibleArtworks.length === 1 ? "justify-items-center" : "grid-cols-1 md:grid-cols-2"
-          }`}
-        >
-          {visibleArtworks.map((item) => {
+      {/* Featured Rivera Mural */}
+      {visibleArtworks.some((a) => a.id === "rivera-mural") && (() => {
+        const item = ALL_ARTWORKS.find((a) => a.id === "rivera-mural")!;
+        const isHighlighted = detectedId === item.id;
+        const saved = isSaved(item.id);
+        const justSaved = justSavedId === item.id;
+        return (
+          <div className="w-full max-w-4xl flex justify-center relative z-10">
+            <div
+              ref={(el) => { cardRefs.current[item.id] = el; }}
+              className={`w-[60%] rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
+                isHighlighted
+                  ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
+                  : "border-white/10"
+              }`}
+            >
+              <img src={item.src} alt={item.title} className="w-full h-[340px] object-cover" loading="lazy" />
+              <div className="p-5 space-y-2">
+                <h2 className="text-lg font-light tracking-wide text-white">{item.title}</h2>
+                <p className="text-sm text-white/50 italic">{item.artist}, {item.year}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
+                {item.attribution && (
+                  <a href={item.attribution.url} target="_blank" rel="noopener noreferrer" className="inline-block text-[11px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1">
+                    {item.attribution.label}
+                  </a>
+                )}
+                <div className="pt-2 flex items-center gap-2">
+                  {saved ? (
+                    <>
+                      <span className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}>
+                        <Check size={16} /> Saved
+                      </span>
+                      <Button size="sm" onClick={() => handleRemove(item.id)} className="gap-1.5 h-7 px-2.5 text-xs bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10">
+                        Remove
+                      </Button>
+                    </>
+                  ) : (
+                    <Button size="sm" onClick={() => handleSave(item.id)} className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10">
+                      <Bookmark size={14} /> Save to Gallery
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Other artworks row */}
+      {visibleArtworks.filter((a) => a.id !== "rivera-mural").length > 0 && (
+        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 relative z-10">
+          {visibleArtworks.filter((a) => a.id !== "rivera-mural").map((item) => {
             const isHighlighted = detectedId === item.id;
             const saved = isSaved(item.id);
             const justSaved = justSavedId === item.id;
             return (
               <div
                 key={item.id}
-                ref={(el) => {
-                  cardRefs.current[item.id] = el;
-                }}
+                ref={(el) => { cardRefs.current[item.id] = el; }}
                 className={`rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
                   isHighlighted
                     ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
                     : "border-white/10"
                 }`}
               >
-                <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
-                <div className="p-5 space-y-2">
-                  <h2 className="text-lg font-light tracking-wide text-white">{item.title}</h2>
-                  <p className="text-sm text-white/50 italic">
-                    {item.artist}, {item.year}
-                  </p>
-                  <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
+                <img src={item.src} alt={item.title} className="w-full h-[180px] object-cover" loading="lazy" />
+                <div className="p-4 space-y-1.5">
+                  <h2 className="text-sm font-light tracking-wide text-white">{item.title}</h2>
+                  <p className="text-xs text-white/50 italic">{item.artist}, {item.year}</p>
+                  <p className="text-xs text-white/70 leading-relaxed line-clamp-3">{item.description}</p>
                   {item.attribution && (
-                    <a
-                      href={item.attribution.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block text-[11px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1"
-                    >
+                    <a href={item.attribution.url} target="_blank" rel="noopener noreferrer" className="inline-block text-[10px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1">
                       {item.attribution.label}
                     </a>
                   )}
                   <div className="pt-2 flex items-center gap-2">
                     {saved ? (
                       <>
-                        <span
-                          className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
-                        >
-                          <Check size={16} /> Saved
+                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}>
+                          <Check size={14} /> Saved
                         </span>
-                        <Button
-                          size="sm"
-                          onClick={() => handleRemove(item.id)}
-                          className="gap-1.5 h-7 px-2.5 text-xs bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
-                        >
+                        <Button size="sm" onClick={() => handleRemove(item.id)} className="gap-1 h-6 px-2 text-[10px] bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10">
                           Remove
                         </Button>
                       </>
                     ) : (
-                      <Button
-                        size="sm"
-                        onClick={() => handleSave(item.id)}
-                        className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
-                      >
-                        <Bookmark size={14} />
-                        Save to Gallery
+                      <Button size="sm" onClick={() => handleSave(item.id)} className="gap-1 h-7 px-2 text-xs bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10">
+                        <Bookmark size={12} /> Save
                       </Button>
                     )}
                   </div>
