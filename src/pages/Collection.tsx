@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Bookmark, Check, X } from "lucide-react";
+import { Bookmark, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import daliAtomicus from "@/assets/dali-atomicus.jpg";
 import riveraMural from "@/assets/rivera-mural.jpg";
