@@ -159,63 +159,79 @@ const Collection = () => {
       </div>
 
       {/* Artwork list */}
-      {visibleArtworks.length > 0 && (() => {
-        const featured = visibleArtworks.find((a) => a.id === "rivera-mural");
-        const rest = visibleArtworks.filter((a) => a.id !== "rivera-mural");
+      {visibleArtworks.length > 0 &&
+        (() => {
+          const featured = visibleArtworks.find((a) => a.id === "rivera-mural");
+          const rest = visibleArtworks.filter((a) => a.id !== "rivera-mural");
 
-        const renderCard = (item: ArtworkItem, className?: string) => {
-          const isHighlighted = detectedId === item.id;
-          const saved = isSaved(item.id);
-          const justSaved = justSavedId === item.id;
-          return (
-            <div
-              key={item.id}
-              ref={(el) => { cardRefs.current[item.id] = el; }}
-              className={`rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
-                isHighlighted
-                  ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
-                  : "border-white/10"
-              } ${className ?? ""}`}
-            >
-              <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
-              <div className="p-5 space-y-2">
-                <h2 className="text-lg font-light tracking-wide text-white">{item.title}</h2>
-                <p className="text-sm text-white/50 italic">{item.artist}, {item.year}</p>
-                <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
-                {item.attribution && (
-                  <a href={item.attribution.url} target="_blank" rel="noopener noreferrer"
-                    className="inline-block text-[11px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1">
-                    {item.attribution.label}
-                  </a>
-                )}
-                <div className="pt-2">
-                  {saved ? (
-                    <span className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}>
-                      <Check size={16} /> Saved
-                    </span>
-                  ) : (
-                    <Button size="sm" onClick={() => handleSave(item.id)}
-                      className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10">
-                      <Bookmark size={14} /> Save to Gallery
-                    </Button>
+          const renderCard = (item: ArtworkItem, className?: string) => {
+            const isHighlighted = detectedId === item.id;
+            const saved = isSaved(item.id);
+            const justSaved = justSavedId === item.id;
+            return (
+              <div
+                key={item.id}
+                ref={(el) => {
+                  cardRefs.current[item.id] = el;
+                }}
+                className={`rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-white/5 backdrop-blur-md border ${
+                  isHighlighted
+                    ? "border-[hsl(var(--gold))]/50 ring-2 ring-[hsl(var(--gold))]/30 scale-[1.02]"
+                    : "border-white/10"
+                } ${className ?? ""}`}
+              >
+                <img src={item.src} alt={item.title} className="w-full h-auto" loading="lazy" />
+                <div className="p-5 space-y-2">
+                  <h2 className="text-lg font-light tracking-wide text-white">{item.title}</h2>
+                  <p className="text-sm text-white/50 italic">
+                    {item.artist}, {item.year}
+                  </p>
+                  <p className="text-sm text-white/70 leading-relaxed">{item.description}</p>
+                  {item.attribution && (
+                    <a
+                      href={item.attribution.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-[11px] text-white/30 underline underline-offset-2 hover:text-white/60 transition-colors mt-1"
+                    >
+                      {item.attribution.label}
+                    </a>
                   )}
+                  <div className="pt-2">
+                    {saved ? (
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-sm font-medium text-[hsl(var(--gold))] transition-opacity ${justSaved ? "animate-fade-in" : ""}`}
+                      >
+                        <Check size={16} /> Saved
+                      </span>
+                    ) : (
+                      <Button
+                        size="sm"
+                        onClick={() => handleSave(item.id)}
+                        className="gap-1.5 bg-transparent border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold))] hover:bg-[hsl(var(--gold))]/10"
+                      >
+                        <Bookmark size={14} /> Save to Gallery
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
+            );
+          };
+
+          return (
+            <div className="w-full max-w-4xl flex flex-col items-center gap-6 relative z-10">
+              {featured && renderCard(featured, "max-w-2xl w-full sm:max-w-3xl lg:max-w-4xl")}
+              {rest.length > 0 && (
+                <div
+                  className={`w-full grid gap-6 ${rest.length === 1 ? "justify-items-center" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}
+                >
+                  {rest.map((item) => renderCard(item))}
+                </div>
+              )}
             </div>
           );
-        };
-
-        return (
-          <div className="w-full max-w-4xl flex flex-col items-center gap-6 relative z-10">
-            {featured && renderCard(featured, "max-w-2xl w-full")}
-            {rest.length > 0 && (
-              <div className={`w-full grid gap-6 ${rest.length === 1 ? "justify-items-center" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}>
-                {rest.map((item) => renderCard(item))}
-              </div>
-            )}
-          </div>
-        );
-      })()}
+        })()}
     </div>
   );
 };
