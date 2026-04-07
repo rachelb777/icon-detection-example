@@ -67,7 +67,7 @@ const Index = () => {
                 <p className="font-sans text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
                   Want more time to enjoy art?
                   <br />
-                  <span className="text-[0.8em] italic font-normal">Save it for later!</span>
+                  <span className="font-sans text-[0.9em] italic font-normal">Save it for later!</span>
                 </p>
               </div>
             </div>
