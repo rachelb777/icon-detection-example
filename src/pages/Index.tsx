@@ -63,7 +63,7 @@ const Index = () => {
                   <span className="text-white text-xs font-medium tracking-wide">Tap to Scan</span>
                 </div>
                 <p className="text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
-                  ?Want more time to enjoy art?
+                  Want more time to enjoy art?
                   <br />
                   Save it for later!
                 </p>
