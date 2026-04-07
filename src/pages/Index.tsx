@@ -60,7 +60,9 @@ const Index = () => {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Camera className="w-4 h-4 text-white shrink-0" />
-                  <span className="text-white text-xs font-medium tracking-wide">Tap to Scan</span>
+                  <span className="font-sans text-white text-sm sm:text-base tracking-wide font-medium">
+                    Tap to Scan
+                  </span>
                 </div>
                 <p className="text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
                   Want more time to enjoy art?
