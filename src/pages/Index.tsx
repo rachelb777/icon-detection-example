@@ -64,10 +64,10 @@ const Index = () => {
                     Tap to Scan
                   </span>
                 </div>
-                <p className="text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
+                <p className="font-sans text-white text-xs sm:text-sm font-light leading-relaxed text-center px-4">
                   Want more time to enjoy art?
                   <br />
-                  Save it for later!
+                  <span className="text-[0.8em] italic font-normal">Save it for later!</span>
                 </p>
               </div>
             </div>
