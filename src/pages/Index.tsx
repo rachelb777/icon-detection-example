@@ -22,7 +22,7 @@ const Index = () => {
         <h1
           className="text-5xl font-bold tracking-[0.05em] text-[#0A0A0A] uppercase"
           style={{
-            filter: "drop-shadow(0 0 8px rgba(255, 191, 0, 0.6)) drop-shadow(0 0 18px rgba(255, 191, 0, 0.25))",
+            filter: "drop-shadow(0 0 6px rgba(255, 191, 0, 0.5)) drop-shadow(0 0 12px rgba(255, 191, 0, 0.2))",
           }}
         >
           MUSEUM LENS
