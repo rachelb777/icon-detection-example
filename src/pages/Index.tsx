@@ -19,11 +19,7 @@ const Index = () => {
 
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-4 flex-[0_0_25%] animate-fade-in">
-         
-        <div className="relative inline-block">
-          <div className="absolute inset-0 bg-black/40 blur-md rounded-lg"></div>
-       
-          <h1
+        <h1
           className="text-5xl font-bold tracking-[0.05em] text-[#0A0A0A] uppercase"
           style={{
             filter: "drop-shadow(0 0 6px rgba(255, 191, 0, 0.5)) drop-shadow(0 0 12px rgba(255, 191, 0, 0.2))",
