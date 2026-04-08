@@ -20,7 +20,7 @@ const Index = () => {
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-4 flex-[0_0_25%] animate-fade-in">
         {/* ADD THIS */}
-        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-0" />
+        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/40 to-transparent z-0" />
         <h1
           className="text-5xl font-bold tracking-[0.05em] text-[#0A0A0A] uppercase"
           style={{
