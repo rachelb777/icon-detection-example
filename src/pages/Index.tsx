@@ -25,7 +25,7 @@ const Index = () => {
             filter: "drop-shadow(0 0 6px rgba(255, 191, 0, 0.5)) drop-shadow(0 0 12px rgba(255, 191, 0, 0.2))",
           }}
         >
-          MUSEUM LENS
+          Museum Lens
         </h1>
       </div>
 
