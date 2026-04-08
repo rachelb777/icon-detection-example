@@ -20,7 +20,7 @@ const Index = () => {
       {/* Top section — title & subtitle in top 25% */}
       <div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-4 flex-[0_0_25%] animate-fade-in">
         <h1
-          className="text-5xl font-semibold tracking-[0.1em] text-[#0A0A0A] uppercase"
+          className="text-5xl font-bold tracking-[0.1em] text-[#0A0A0A] uppercase"
           style={{
             filter: "drop-shadow(0 0 8px rgba(255, 191, 0, 0.6)) drop-shadow(0 0 18px rgba(255, 191, 0, 0.25))",
           }}
